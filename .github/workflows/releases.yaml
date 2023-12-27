@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version to publish'
-        default: '1.0.0'
+        description: Version to publish
+        default: 1.0.0
         required: true
   release:
     types:
@@ -89,7 +89,7 @@ jobs:
       #
       # Publish package to destination registry
       #
-      # - name: Publish package to registry
-      #   run: pnpm publish
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish package to registry
+        run: pnpm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
