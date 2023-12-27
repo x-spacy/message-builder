@@ -1,6 +1,6 @@
 {
   "name": "@vyrnnstudios/messages",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "A WhatsApp message builder made for Vyrnn Studios.",
   "license": "MIT",
   "private": false,
