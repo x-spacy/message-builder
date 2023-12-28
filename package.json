@@ -15,6 +15,10 @@
     "type": "git",
     "url": "git+https://github.com/vyrnnstudios/messages.git"
   },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
   "engines": {
     "node": "v20.x.x"
   },
