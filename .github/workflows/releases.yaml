@@ -91,5 +91,7 @@ jobs:
       #
       - name: Publish package to registry
         run: pnpm publish
+        with:
+          git-checks: false
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
