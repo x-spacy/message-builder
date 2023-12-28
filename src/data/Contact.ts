@@ -1,7 +1,7 @@
 import {
   ContactAddressType,
   ContactEmailType,
-  ContactOrgType,
+  ContactPhoneType,
   ContactUrlType
 } from '@vyrnnstudios/messages/enums';
 
@@ -341,7 +341,7 @@ export class ContactOrg {
 
 export class ContactPhone {
   private _phone?: string;
-  private _type?: ContactOrgType;
+  private _type?: ContactPhoneType;
   private _waId?: string;
 
   public set phone(phone: string) {
@@ -352,11 +352,11 @@ export class ContactPhone {
     return this._phone;
   }
 
-  public set type(type: ContactOrgType) {
+  public set type(type: ContactPhoneType) {
     this._type = type;
   }
 
-  public get type(): ContactOrgType | undefined {
+  public get type(): ContactPhoneType | undefined {
     return this._type;
   }
 

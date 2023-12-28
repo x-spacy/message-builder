@@ -84,7 +84,7 @@ declare module '@vyrnnstudios/messages/enums' {
     WORK = 'WORK'
   }
 
-  export enum ContactOrgType {
+  export enum ContactPhoneType {
     CELL = 'CELL',
     MAIN = 'MAIN',
     IPHONE = 'IPHONE',
