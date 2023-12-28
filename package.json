@@ -16,6 +16,7 @@
     "url": "git+https://github.com/vyrnnstudios/messages.git"
   },
   "publishConfig": {
+    "registry": "https://registry.npmjs.org",
     "access": "public",
     "tag": "latest"
   },
