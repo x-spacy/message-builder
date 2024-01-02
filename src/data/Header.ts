@@ -70,6 +70,10 @@ export class Header {
 
     return record;
   }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
+  }
 }
 
 export class HeaderProvider {
@@ -89,6 +93,10 @@ export class HeaderProvider {
     record['name'] = this.#name;
 
     return record;
+  }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
   }
 }
 
@@ -140,6 +148,10 @@ export class HeaderImage {
 
     return record;
   }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
+  }
 }
 
 export class HeaderVideo {
@@ -189,6 +201,10 @@ export class HeaderVideo {
     }
 
     return record;
+  }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
   }
 }
 
@@ -252,5 +268,9 @@ export class HeaderDocument {
     }
 
     return record;
+  }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
   }
 }

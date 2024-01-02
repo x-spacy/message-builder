@@ -104,6 +104,10 @@ export class Interactive {
 
     return record;
   }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
+  }
 }
 
 export class List {
@@ -133,6 +137,10 @@ export class List {
     record['sections'] = this.#sections;
 
     return record;
+  }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
   }
 }
 
@@ -166,6 +174,10 @@ export class ListSection {
     record['rows'] = this.#rows;
 
     return record;
+  }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
   }
 }
 
@@ -210,6 +222,10 @@ export class ListSectionRow {
 
     return record;
   }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
+  }
 }
 
 export class ReplyButton {
@@ -229,6 +245,10 @@ export class ReplyButton {
     record['buttons'] = this.#buttons;
 
     return record;
+  }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
   }
 }
 
@@ -259,6 +279,10 @@ export class ReplyButtonRow {
     record['reply'] = this.#reply;
 
     return record;
+  }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
   }
 }
 
@@ -293,6 +317,10 @@ export class ReplyButtonRowReply {
 
     return record;
   }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
+  }
 }
 
 export class Product {
@@ -322,6 +350,10 @@ export class Product {
     record['product_retailer_id'] = this.#productRetailerId;
 
     return record;
+  }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
   }
 }
 
@@ -353,6 +385,10 @@ export class ProductList {
 
     return record;
   }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
+  }
 }
 
 export class ProductListSection {
@@ -383,6 +419,10 @@ export class ProductListSection {
 
     return record;
   }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
+  }
 }
 
 export class ProductListSectionProductItem {
@@ -402,6 +442,10 @@ export class ProductListSectionProductItem {
     record['product_retailer_id'] = this.#productRetailerId;
 
     return record;
+  }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
   }
 }
 
@@ -433,6 +477,10 @@ export class CatalogMessage {
 
     return record;
   }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
+  }
 }
 
 export class CatalogMessageParameter {
@@ -452,6 +500,10 @@ export class CatalogMessageParameter {
     record['thumbnail_product_retailer_id'] = this.#thumbnailProductRetailerId;
 
     return record;
+  }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
   }
 }
 
@@ -482,6 +534,10 @@ export class Flow {
     record['parameters'] = this.#parameters;
 
     return record;
+  }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
   }
 }
 
@@ -553,6 +609,10 @@ export class FlowParameter {
 
     return record;
   }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
+  }
 }
 
 export class FlowParameterFlowActionPayload {
@@ -585,5 +645,9 @@ export class FlowParameterFlowActionPayload {
     }
 
     return record;
+  }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
   }
 }

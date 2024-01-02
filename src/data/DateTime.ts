@@ -33,6 +33,10 @@ export class DateTime {
 
     return record;
   }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
+  }
 }
 
 export class DateTimeComponent {
@@ -125,6 +129,10 @@ export class DateTimeComponent {
 
     return record;
   }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
+  }
 }
 
 export class DateTimeEpoch {
@@ -144,5 +152,9 @@ export class DateTimeEpoch {
     record['timestamp'] = this.#timestamp;
 
     return record;
+  }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
   }
 }
