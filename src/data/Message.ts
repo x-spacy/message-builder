@@ -280,4 +280,8 @@ export class Message {
 
     return record;
   }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
+  }
 }

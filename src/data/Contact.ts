@@ -69,6 +69,44 @@ export class Contact {
   public get urls(): ContactUrl | undefined {
     return this.#urls;
   }
+
+  public toJSON(): Record<string, unknown> {
+    const record: Record<string, unknown> = {};
+
+    if (this.#addresses) {
+      record['addresses'] = this.#addresses;
+    }
+
+    if (this.#birthday) {
+      record['birthday'] = this.#birthday;
+    }
+
+    if (this.#emails) {
+      record['emails'] = this.#emails;
+    }
+
+    if (this.#name) {
+      record['name'] = this.#name;
+    }
+
+    if (this.#org) {
+      record['org'] = this.#org;
+    }
+
+    if (this.#phones) {
+      record['phones'] = this.#phones;
+    }
+
+    if (this.#urls) {
+      record['urls'] = this.#urls;
+    }
+
+    return record;
+  }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
+  }
 }
 
 export class ContactAddress {
@@ -169,6 +207,10 @@ export class ContactAddress {
 
     return record;
   }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
+  }
 }
 
 export class ContactEmail {
@@ -203,6 +245,10 @@ export class ContactEmail {
     }
 
     return record;
+  }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
   }
 }
 
@@ -289,6 +335,10 @@ export class ContactName {
 
     return record;
   }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
+  }
 }
 
 export class ContactOrg {
@@ -336,6 +386,10 @@ export class ContactOrg {
     }
 
     return record;
+  }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
   }
 }
 
@@ -385,6 +439,10 @@ export class ContactPhone {
 
     return record;
   }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
+  }
 }
 
 export class ContactUrl {
@@ -419,5 +477,9 @@ export class ContactUrl {
     }
 
     return record;
+  }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
   }
 }

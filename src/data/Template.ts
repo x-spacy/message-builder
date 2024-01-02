@@ -55,6 +55,10 @@ export class Template {
 
     return record;
   }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
+  }
 }
 
 export class TemplateComponent {
@@ -108,6 +112,10 @@ export class TemplateComponent {
     record['index'] = this.#index;
 
     return record;
+  }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
   }
 }
 
@@ -207,5 +215,9 @@ export class TemplateComponentParameter {
     }
 
     return record;
+  }
+
+  [Symbol.for('nodejs.util.inspect.custom')](): Record<string, unknown> {
+    return this.toJSON();
   }
 }
