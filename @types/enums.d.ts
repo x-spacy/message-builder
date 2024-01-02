@@ -1,4 +1,4 @@
-declare module '@vyrnnstudios/messages/enums' {
+declare module '@vyrnnstudios/messages' {
   export enum MessageType {
     TEXT = 'text',
     IMAGE = 'image',

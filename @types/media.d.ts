@@ -1,7 +1,5 @@
-/// <reference path="data.d.ts" />
-
-declare module '@vyrnnstudios/messages/build/MediaBuilder' {
-  import { Media } from '@vyrnnstudios/messages/data';
+declare module '@vyrnnstudios/messages' {
+  import { Media } from '@vyrnnstudios/messages';
 
   export class MediaBuilder {
     public static newBuilder(): MediaBuilder

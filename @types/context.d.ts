@@ -1,7 +1,5 @@
-/// <reference path="data.d.ts" />
-
-declare module '@vyrnnstudios/messages/build/ContextBuilder' {
-  import { Context } from '@vyrnnstudios/messages/data';
+declare module '@vyrnnstudios/messages' {
+  import { Context } from '@vyrnnstudios/messages';
 
   export class ContextBuilder {
     public static newBuilder(): ContextBuilder

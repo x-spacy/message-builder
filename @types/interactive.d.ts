@@ -1,8 +1,4 @@
-/// <reference path="data.d.ts" />
-/// <reference path="build.d.ts" />
-/// <reference path="enums.d.ts" />
-
-declare module '@vyrnnstudios/messages/build/InteractiveBuilder' {
+declare module '@vyrnnstudios/messages' {
   import {
     Interactive,
     Header,
@@ -22,23 +18,17 @@ declare module '@vyrnnstudios/messages/build/InteractiveBuilder' {
     ProductListSection,
     CatalogMessageParameter,
     FlowParameterFlowActionPayload,
-    FlowParameter
-  } from '@vyrnnstudios/messages/data';
-
-  import {
+    FlowParameter,
     HeaderBuilder,
     BodyBuilder,
-    FooterBuilder
-  } from '@vyrnnstudios/messages/build';
-
-  import { InteractiveType } from '@vyrnnstudios/messages/enums';
+    FooterBuilder,
+    InteractiveType
+  } from '@vyrnnstudios/messages';
 
   export class InteractiveBuilder {
     public static newBuilder(): InteractiveBuilder
 
     public static builder(): InteractiveBuilder
-
-    public append(interactive: Interactive): InteractiveBuilder
 
     public type(type: InteractiveType): InteractiveBuilder
 
@@ -69,8 +59,6 @@ declare module '@vyrnnstudios/messages/build/InteractiveBuilder' {
     public static newBuilder(): ListBuilder
 
     public static builder(): ListBuilder
-
-    public append(list: List): ListBuilder
 
     public button(button: string): ListBuilder
 

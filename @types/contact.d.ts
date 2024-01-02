@@ -1,7 +1,4 @@
-/// <reference path="data.d.ts" />
-/// <reference path="enums.d.ts" />
-
-declare module '@vyrnnstudios/messages/build/ContactBuilder' {
+declare module '@vyrnnstudios/messages' {
   import {
     Contact,
     ContactAddress,
@@ -9,15 +6,12 @@ declare module '@vyrnnstudios/messages/build/ContactBuilder' {
     ContactName,
     ContactOrg,
     ContactPhone,
-    ContactUrl
-  } from '@vyrnnstudios/messages/data';
-
-  import {
+    ContactUrl,
     ContactAddressType,
     ContactEmailType,
     ContactPhoneType,
     ContactUrlType
-  } from '@vyrnnstudios/messages/enums';
+  } from '@vyrnnstudios/messages';
 
   export class ContactBuilder {
     public static newBuilder(): ContactBuilder

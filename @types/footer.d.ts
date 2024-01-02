@@ -1,14 +1,10 @@
-/// <reference path="data.d.ts" />
-
-declare module '@vyrnnstudios/messages/build/FooterBuilder' {
-  import { Footer } from '@vyrnnstudios/messages/data';
+declare module '@vyrnnstudios/messages' {
+  import { Footer } from '@vyrnnstudios/messages';
 
   export class FooterBuilder {
     public static newBuilder(): FooterBuilder
 
     public static builder(): FooterBuilder
-
-    public append(footer: Footer): FooterBuilder
 
     public text(text: string): FooterBuilder
 
