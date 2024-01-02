@@ -9,18 +9,18 @@ import { FooterBuilder } from '@vyrnnstudios/messages/build/FooterBuilder';
 import { InteractiveType } from '@vyrnnstudios/messages/enums';
 
 export class Interactive {
-  private _type: InteractiveType;
-  private _header?: Header;
-  private _body: Body;
-  private _footer?: Footer;
-  private _action: List | ReplyButton | Product | ProductList | CatalogMessage | Flow;
+  #type: InteractiveType;
+  #header?: Header;
+  #body: Body;
+  #footer?: Footer;
+  #action: List | ReplyButton | Product | ProductList | CatalogMessage | Flow;
 
   public set type(type: InteractiveType) {
-    this._type = type;
+    this.#type = type;
   }
 
   public get type(): InteractiveType {
-    return this._type;
+    return this.#type;
   }
 
   public set header(builder: Header | ((builder: HeaderBuilder) => void)) {
@@ -34,11 +34,11 @@ export class Interactive {
       builder(headerBuilder);
     }
 
-    this._header = headerBuilder.build();
+    this.#header = headerBuilder.build();
   }
 
   public get header(): Header | undefined {
-    return this._header;
+    return this.#header;
   }
 
   public set body(body: Body | ((builder: BodyBuilder) => void)) {
@@ -52,11 +52,11 @@ export class Interactive {
       body(bodyBuilder);
     }
 
-    this._body = bodyBuilder.build();
+    this.#body = bodyBuilder.build();
   }
 
   public get body(): Body {
-    return this._body;
+    return this.#body;
   }
 
   public set footer(footer: Footer | ((builder: FooterBuilder) => void)) {
@@ -70,142 +70,142 @@ export class Interactive {
       footer(footerBuilder);
     }
 
-    this._footer = footerBuilder.build();
+    this.#footer = footerBuilder.build();
   }
 
   public get footer(): Footer | undefined {
-    return this._footer;
+    return this.#footer;
   }
 
   public set action(action: List | ReplyButton | Product | ProductList | CatalogMessage | Flow) {
-    this._action = action;
+    this.#action = action;
   }
 
   public get action(): List | ReplyButton | Product | ProductList | CatalogMessage | Flow {
-    return this._action;
+    return this.#action;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['type'] = this._type;
+    record['type'] = this.#type;
 
-    if (this._header) {
-      record['header'] = this._header;
+    if (this.#header) {
+      record['header'] = this.#header;
     }
 
-    record['body'] = this._body;
+    record['body'] = this.#body;
 
-    if (this._footer) {
-      record['footer'] = this._footer;
+    if (this.#footer) {
+      record['footer'] = this.#footer;
     }
 
-    record['action'] = this._action;
+    record['action'] = this.#action;
 
     return record;
   }
 }
 
 export class List {
-  private _button: string;
-  private _sections: Array<ListSection>;
+  #button: string;
+  #sections: Array<ListSection>;
 
   public set button(button: string) {
-    this._button = button;
+    this.#button = button;
   }
 
   public get button(): string {
-    return this._button;
+    return this.#button;
   }
 
   public set sections(sections: Array<ListSection>) {
-    this._sections = sections;
+    this.#sections = sections;
   }
 
   public get sections(): Array<ListSection> {
-    return this._sections;
+    return this.#sections;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['button'] = this._button;
-    record['sections'] = this._sections;
+    record['button'] = this.#button;
+    record['sections'] = this.#sections;
 
     return record;
   }
 }
 
 export class ListSection {
-  private _title?: string;
-  private _rows: Array<ListSectionRow>;
+  #title?: string;
+  #rows: Array<ListSectionRow>;
 
   public set title(title: string) {
-    this._title = title;
+    this.#title = title;
   }
 
   public get title(): string | undefined {
-    return this._title;
+    return this.#title;
   }
 
   public set rows(rows: Array<ListSectionRow>) {
-    this._rows = rows;
+    this.#rows = rows;
   }
 
   public get rows(): Array<ListSectionRow> {
-    return this._rows;
+    return this.#rows;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    if (this._title) {
-      record['title'] = this._title;
+    if (this.#title) {
+      record['title'] = this.#title;
     }
 
-    record['rows'] = this._rows;
+    record['rows'] = this.#rows;
 
     return record;
   }
 }
 
 export class ListSectionRow {
-  private _id: string;
-  private _title: string;
-  private _description?: string;
+  #id: string;
+  #title: string;
+  #description?: string;
 
   public set id(id: string) {
-    this._id = id;
+    this.#id = id;
   }
 
   public get id(): string {
-    return this._id;
+    return this.#id;
   }
 
   public set title(title: string) {
-    this._title = title;
+    this.#title = title;
   }
 
   public get title(): string {
-    return this._title;
+    return this.#title;
   }
 
   public set description(description: string) {
-    this._description = description;
+    this.#description = description;
   }
 
   public get description(): string | undefined {
-    return this._description;
+    return this.#description;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['id'] = this._id;
-    record['title'] = this._title;
+    record['id'] = this.#id;
+    record['title'] = this.#title;
 
-    if (this._description) {
-      record['description'] = this._description;
+    if (this.#description) {
+      record['description'] = this.#description;
     }
 
     return record;
@@ -213,375 +213,375 @@ export class ListSectionRow {
 }
 
 export class ReplyButton {
-  private _buttons: Array<ReplyButtonRow>;
+  #buttons: Array<ReplyButtonRow>;
 
   public set buttons(buttons: Array<ReplyButtonRow>) {
-    this._buttons = buttons;
+    this.#buttons = buttons;
   }
 
   public get buttons(): Array<ReplyButtonRow> {
-    return this._buttons;
+    return this.#buttons;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['buttons'] = this._buttons;
+    record['buttons'] = this.#buttons;
 
     return record;
   }
 }
 
 export class ReplyButtonRow {
-  private _type: 'reply';
-  private _reply: ReplyButtonRowReply;
+  #type: 'reply';
+  #reply: ReplyButtonRowReply;
 
   public set type(type: 'reply') {
-    this._type = type;
+    this.#type = type;
   }
 
   public get type(): 'reply' {
-    return this._type;
+    return this.#type;
   }
 
   public set reply(reply: ReplyButtonRowReply) {
-    this._reply = reply;
+    this.#reply = reply;
   }
 
   public get reply(): ReplyButtonRowReply {
-    return this._reply;
+    return this.#reply;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['type'] = this._type;
-    record['reply'] = this._reply;
+    record['type'] = this.#type;
+    record['reply'] = this.#reply;
 
     return record;
   }
 }
 
 export class ReplyButtonRowReply {
-  private _id?: string;
-  private _title: string;
+  #id?: string;
+  #title: string;
 
   public set id(id: string) {
-    this._id = id;
+    this.#id = id;
   }
 
   public get id(): string | undefined {
-    return this._id;
+    return this.#id;
   }
 
   public set title(title: string) {
-    this._title = title;
+    this.#title = title;
   }
 
   public get title(): string {
-    return this._title;
+    return this.#title;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    if (this._id) {
-      record['id'] = this._id;
+    if (this.#id) {
+      record['id'] = this.#id;
     }
 
-    record['title'] = this._title;
+    record['title'] = this.#title;
 
     return record;
   }
 }
 
 export class Product {
-  private _id: string;
-  private _productRetailerId: string;
+  #id: string;
+  #productRetailerId: string;
 
   public set id(id: string) {
-    this._id = id;
+    this.#id = id;
   }
 
   public get id(): string {
-    return this._id;
+    return this.#id;
   }
 
   public set productRetailerId(productRetailerId: string) {
-    this._productRetailerId = productRetailerId;
+    this.#productRetailerId = productRetailerId;
   }
 
   public get productRetailerId(): string {
-    return this._productRetailerId;
+    return this.#productRetailerId;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['id'] = this._id;
-    record['product_retailer_id'] = this._productRetailerId;
+    record['id'] = this.#id;
+    record['product_retailer_id'] = this.#productRetailerId;
 
     return record;
   }
 }
 
 export class ProductList {
-  private _catalogId: string;
-  private _sections: Array<ProductListSection>;
+  #catalogId: string;
+  #sections: Array<ProductListSection>;
 
   public set catalogId(catalogId: string) {
-    this._catalogId = catalogId;
+    this.#catalogId = catalogId;
   }
 
   public get catalogId(): string {
-    return this._catalogId;
+    return this.#catalogId;
   }
 
   public set sections(sections: Array<ProductListSection>) {
-    this._sections = sections;
+    this.#sections = sections;
   }
 
   public get sections(): Array<ProductListSection> {
-    return this._sections;
+    return this.#sections;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['catalog_id'] = this._catalogId;
-    record['sections'] = this._sections;
+    record['catalog_id'] = this.#catalogId;
+    record['sections'] = this.#sections;
 
     return record;
   }
 }
 
 export class ProductListSection {
-  private _title: string;
-  private _productItems: Array<ProductListSectionProductItem>;
+  #title: string;
+  #productItems: Array<ProductListSectionProductItem>;
 
   public set title(title: string) {
-    this._title = title;
+    this.#title = title;
   }
 
   public get title(): string {
-    return this._title;
+    return this.#title;
   }
 
   public set productItems(productItems: Array<ProductListSectionProductItem>) {
-    this._productItems = productItems;
+    this.#productItems = productItems;
   }
 
   public get productItems(): Array<ProductListSectionProductItem> {
-    return this._productItems;
+    return this.#productItems;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['title'] = this._title;
-    record['product_items'] = this._productItems;
+    record['title'] = this.#title;
+    record['product_items'] = this.#productItems;
 
     return record;
   }
 }
 
 export class ProductListSectionProductItem {
-  private _productRetailerId: string;
+  #productRetailerId: string;
 
   public set productRetailerId(productRetailerId: string) {
-    this._productRetailerId = productRetailerId;
+    this.#productRetailerId = productRetailerId;
   }
 
   public get productRetailerId(): string {
-    return this._productRetailerId;
+    return this.#productRetailerId;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['product_retailer_id'] = this._productRetailerId;
+    record['product_retailer_id'] = this.#productRetailerId;
 
     return record;
   }
 }
 
 export class CatalogMessage {
-  private _name: string;
-  private _parameters: CatalogMessageParameter;
+  #name: string;
+  #parameters: CatalogMessageParameter;
 
   public set name(name: string) {
-    this._name = name;
+    this.#name = name;
   }
 
   public get name(): string {
-    return this._name;
+    return this.#name;
   }
 
   public set parameters(parameters: CatalogMessageParameter) {
-    this._parameters = parameters;
+    this.#parameters = parameters;
   }
 
   public get parameters(): CatalogMessageParameter {
-    return this._parameters;
+    return this.#parameters;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['name'] = this._name;
-    record['parameters'] = this._parameters;
+    record['name'] = this.#name;
+    record['parameters'] = this.#parameters;
 
     return record;
   }
 }
 
 export class CatalogMessageParameter {
-  private _thumbnailProductRetailerId: string;
+  #thumbnailProductRetailerId: string;
 
   public set thumbnailProductRetailerId(thumbnailProductRetailerId: string) {
-    this._thumbnailProductRetailerId = thumbnailProductRetailerId;
+    this.#thumbnailProductRetailerId = thumbnailProductRetailerId;
   }
 
   public get thumbnailProductRetailerId(): string {
-    return this._thumbnailProductRetailerId;
+    return this.#thumbnailProductRetailerId;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['thumbnail_product_retailer_id'] = this._thumbnailProductRetailerId;
+    record['thumbnail_product_retailer_id'] = this.#thumbnailProductRetailerId;
 
     return record;
   }
 }
 
 export class Flow {
-  private _name: string;
-  private _parameters: FlowParameter;
+  #name: string;
+  #parameters: FlowParameter;
 
   public set name(name: string) {
-    this._name = name;
+    this.#name = name;
   }
 
   public get name(): string {
-    return this._name;
+    return this.#name;
   }
 
   public set parameters(parameters: FlowParameter) {
-    this._parameters = parameters;
+    this.#parameters = parameters;
   }
 
   public get parameters(): FlowParameter {
-    return this._parameters;
+    return this.#parameters;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['name'] = this._name;
-    record['parameters'] = this._parameters;
+    record['name'] = this.#name;
+    record['parameters'] = this.#parameters;
 
     return record;
   }
 }
 
 export class FlowParameter {
-  private _flowMessageVersion: string;
-  private _flowToken: string;
-  private _flowId: string;
-  private _flowCTA: string;
-  private _flowAction: string;
-  private _flowActionPayload: FlowParameterFlowActionPayload;
+  #flowMessageVersion: string;
+  #flowToken: string;
+  #flowId: string;
+  #flowCTA: string;
+  #flowAction: string;
+  #flowActionPayload: FlowParameterFlowActionPayload;
 
   public set flowMessageVersion(flowMessageVersion: string) {
-    this._flowMessageVersion = flowMessageVersion;
+    this.#flowMessageVersion = flowMessageVersion;
   }
 
   public get flowMessageVersion(): string {
-    return this._flowMessageVersion;
+    return this.#flowMessageVersion;
   }
 
   public set flowToken(flowToken: string) {
-    this._flowToken = flowToken;
+    this.#flowToken = flowToken;
   }
 
   public get flowToken(): string {
-    return this._flowToken;
+    return this.#flowToken;
   }
 
   public set flowId(flowId: string) {
-    this._flowId = flowId;
+    this.#flowId = flowId;
   }
 
   public get flowId(): string {
-    return this._flowId;
+    return this.#flowId;
   }
 
   public set flowCTA(flowCTA: string) {
-    this._flowCTA = flowCTA;
+    this.#flowCTA = flowCTA;
   }
 
   public get flowCTA(): string {
-    return this._flowCTA;
+    return this.#flowCTA;
   }
 
   public set flowAction(flowAction: string) {
-    this._flowAction = flowAction;
+    this.#flowAction = flowAction;
   }
 
   public get flowAction(): string {
-    return this._flowAction;
+    return this.#flowAction;
   }
 
   public set flowActionPayload(flowActionPayload: FlowParameterFlowActionPayload) {
-    this._flowActionPayload = flowActionPayload;
+    this.#flowActionPayload = flowActionPayload;
   }
 
   public get flowActionPayload(): FlowParameterFlowActionPayload {
-    return this._flowActionPayload;
+    return this.#flowActionPayload;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['flow_message_version'] = this._flowMessageVersion;
-    record['flow_token'] = this._flowToken;
-    record['flow_id'] = this._flowId;
-    record['flow_cta'] = this._flowCTA;
-    record['flow_action'] = this._flowAction;
-    record['flow_action_payload'] = this._flowActionPayload;
+    record['flow_message_version'] = this.#flowMessageVersion;
+    record['flow_token'] = this.#flowToken;
+    record['flow_id'] = this.#flowId;
+    record['flow_cta'] = this.#flowCTA;
+    record['flow_action'] = this.#flowAction;
+    record['flow_action_payload'] = this.#flowActionPayload;
 
     return record;
   }
 }
 
 export class FlowParameterFlowActionPayload {
-  private _screen: string;
-  private _data?: Record<string, unknown>;
+  #screen: string;
+  #data?: Record<string, unknown>;
 
   public set screen(screen: string) {
-    this._screen = screen;
+    this.#screen = screen;
   }
 
   public get screen(): string {
-    return this._screen;
+    return this.#screen;
   }
 
   public set data(data: Record<string, unknown>) {
-    this._data = data;
+    this.#data = data;
   }
 
   public get data(): Record<string, unknown> | undefined {
-    return this._data;
+    return this.#data;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['screen'] = this._screen;
+    record['screen'] = this.#screen;
 
-    if (this._data) {
-      record['data'] = this._data;
+    if (this.#data) {
+      record['data'] = this.#data;
     }
 
     return record;

@@ -17,60 +17,60 @@ import {
 import { InvalidMessageType } from '@vyrnnstudios/messages/exceptions/InvalidMessageType';
 
 export class Message {
-  private _to: string;
-  private _type?: MessageType = MessageType.TEXT;
+  #to: string;
+  #type?: MessageType = MessageType.TEXT;
 
-  private _recipientType?: RecipientType;
+  #recipientType?: RecipientType;
 
-  private _text?: Text;
-  private _interactive?: Interactive;
-  private _image?: Media;
-  private _audio?: Media;
-  private _document?: Media;
-  private _sticker?: Media;
+  #text?: Text;
+  #interactive?: Interactive;
+  #image?: Media;
+  #audio?: Media;
+  #document?: Media;
+  #sticker?: Media;
 
-  private _location?: Location;
+  #location?: Location;
 
-  private _template?: Template;
+  #template?: Template;
 
-  private _contacts?: Contact;
-  private _context?: Context;
+  #contacts?: Contact;
+  #context?: Context;
 
-  private _bizOpaqueCallbackData?: string;
-  private _messagingProduct: MessagingProduct;
-  private _status?: string;
-  private _previewUrl?: boolean;
+  #bizOpaqueCallbackData?: string;
+  #messagingProduct: MessagingProduct;
+  #status?: string;
+  #previewUrl?: boolean;
 
   public set to(to: string) {
-    this._to = to;
+    this.#to = to;
   }
 
   public get to(): string {
-    return this._to;
+    return this.#to;
   }
 
   public set type(type: MessageType) {
-    this._type = type;
+    this.#type = type;
   }
 
   public get type(): MessageType | undefined {
-    return this._type;
+    return this.#type;
   }
 
   public set recipientType(recipientType: RecipientType) {
-    this._recipientType = recipientType;
+    this.#recipientType = recipientType;
   }
 
   public get recipientType(): RecipientType | undefined {
-    return this._recipientType;
+    return this.#recipientType;
   }
 
   public set text(text: Text) {
-    if (this._type !== MessageType.TEXT) {
+    if (this.#type !== MessageType.TEXT) {
       throw new InvalidMessageType();
     }
 
-    this._text = text;
+    this.#text = text;
   }
 
   public get text(): Text {
@@ -78,204 +78,204 @@ export class Message {
   }
 
   public set interactive(interactive: Interactive) {
-    if (this._type !== MessageType.INTERACTIVE) {
+    if (this.#type !== MessageType.INTERACTIVE) {
       throw new InvalidMessageType();
     }
 
-    this._interactive = interactive;
+    this.#interactive = interactive;
   }
 
   public get interactive(): Interactive | undefined {
-    return this._interactive;
+    return this.#interactive;
   }
 
   public set image(image: Media) {
-    if (this._type !== MessageType.IMAGE) {
+    if (this.#type !== MessageType.IMAGE) {
       throw new InvalidMessageType();
     }
 
-    this._image = image;
+    this.#image = image;
   }
 
   public get image(): Media | undefined {
-    return this._image;
+    return this.#image;
   }
 
   public set audio(audio: Media) {
-    if (this._type !== MessageType.AUDIO) {
+    if (this.#type !== MessageType.AUDIO) {
       throw new InvalidMessageType();
     }
 
-    this._audio = audio;
+    this.#audio = audio;
   }
 
   public get audio(): Media | undefined {
-    return this._audio;
+    return this.#audio;
   }
 
   public set document(document: Media) {
-    if (this._type !== MessageType.DOCUMENT) {
+    if (this.#type !== MessageType.DOCUMENT) {
       throw new InvalidMessageType();
     }
 
-    this._document = document;
+    this.#document = document;
   }
 
   public get document(): Media | undefined {
-    return this._document;
+    return this.#document;
   }
 
   public set sticker(sticker: Media) {
-    if (this._type !== MessageType.STICKER) {
+    if (this.#type !== MessageType.STICKER) {
       throw new InvalidMessageType();
     }
 
-    this._sticker = sticker;
+    this.#sticker = sticker;
   }
 
   public get sticker(): Media | undefined {
-    return this._sticker;
+    return this.#sticker;
   }
 
   public set location(location: Location) {
-    if (this._type !== MessageType.LOCATION) {
+    if (this.#type !== MessageType.LOCATION) {
       throw new InvalidMessageType();
     }
 
-    this._location = location;
+    this.#location = location;
   }
 
   public get location(): Location | undefined {
-    return this._location;
+    return this.#location;
   }
 
   public set template(template: Template) {
-    if (this._type !== MessageType.TEMPLATE) {
+    if (this.#type !== MessageType.TEMPLATE) {
       throw new InvalidMessageType();
     }
 
-    this._template = template;
+    this.#template = template;
   }
 
   public get template(): Template | undefined {
-    return this._template;
+    return this.#template;
   }
 
   public set contacts(contacts: Contact) {
-    if (this._type !== MessageType.CONTACTS) {
+    if (this.#type !== MessageType.CONTACTS) {
       throw new InvalidMessageType();
     }
 
-    this._contacts = contacts;
+    this.#contacts = contacts;
   }
 
   public get contacts(): Contact | undefined {
-    return this._contacts;
+    return this.#contacts;
   }
 
   public set context(context: Context) {
-    this._context = context;
+    this.#context = context;
   }
 
   public get context(): Context | undefined {
-    return this._context;
+    return this.#context;
   }
 
   public set bizOpaqueCallbackData(bizOpaqueCallbackData: string) {
-    this._bizOpaqueCallbackData = bizOpaqueCallbackData;
+    this.#bizOpaqueCallbackData = bizOpaqueCallbackData;
   }
 
   public get bizOpaqueCallbackData(): string | undefined {
-    return this._bizOpaqueCallbackData;
+    return this.#bizOpaqueCallbackData;
   }
 
   public set messagingProduct(messagingProduct: MessagingProduct) {
-    this._messagingProduct = messagingProduct;
+    this.#messagingProduct = messagingProduct;
   }
 
   public get messagingProduct(): MessagingProduct {
-    return this._messagingProduct;
+    return this.#messagingProduct;
   }
 
   public set status(status: string) {
-    this._status = status;
+    this.#status = status;
   }
 
   public get status(): string | undefined {
-    return this._status;
+    return this.#status;
   }
 
   public set previewUrl(previewUrl: boolean) {
-    this._previewUrl = previewUrl;
+    this.#previewUrl = previewUrl;
   }
 
   public get previewUrl(): boolean | undefined {
-    return this._previewUrl;
+    return this.#previewUrl;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['to'] = this._to;
+    record['to'] = this.#to;
 
-    if (this._type) {
-      record['type'] = this._type;
+    if (this.#type) {
+      record['type'] = this.#type;
     }
 
-    if (this._recipientType) {
-      record['recipient_type'] = this._recipientType;
+    if (this.#recipientType) {
+      record['recipient_type'] = this.#recipientType;
     }
 
-    if (this._text) {
-      record['text'] = this._text;
+    if (this.#text) {
+      record['text'] = this.#text;
     }
 
-    if (this._interactive) {
-      record['interactive'] = this._interactive;
+    if (this.#interactive) {
+      record['interactive'] = this.#interactive;
     }
 
-    if (this._image) {
-      record['image'] = this._image;
+    if (this.#image) {
+      record['image'] = this.#image;
     }
 
-    if (this._audio) {
-      record['audio'] = this._audio;
+    if (this.#audio) {
+      record['audio'] = this.#audio;
     }
 
-    if (this._document) {
-      record['document'] = this._document;
+    if (this.#document) {
+      record['document'] = this.#document;
     }
 
-    if (this._location) {
-      record['location'] = this._location;
+    if (this.#location) {
+      record['location'] = this.#location;
     }
 
-    if (this._template) {
-      record['template'] = this._template;
+    if (this.#template) {
+      record['template'] = this.#template;
     }
 
-    if (this._contacts) {
-      record['contacts'] = this._contacts;
+    if (this.#contacts) {
+      record['contacts'] = this.#contacts;
     }
 
-    if (this._context) {
-      record['context'] = this._context;
+    if (this.#context) {
+      record['context'] = this.#context;
     }
 
-    if (this._bizOpaqueCallbackData) {
-      record['biz_opaque_callback_data'] = this._bizOpaqueCallbackData;
+    if (this.#bizOpaqueCallbackData) {
+      record['biz_opaque_callback_data'] = this.#bizOpaqueCallbackData;
     }
 
-    if (this._messagingProduct) {
-      record['messaging_product'] = this._messagingProduct;
+    if (this.#messagingProduct) {
+      record['messaging_product'] = this.#messagingProduct;
     }
 
-    if (this._status) {
-      record['status'] = this._status;
+    if (this.#status) {
+      record['status'] = this.#status;
     }
 
-    if (this._previewUrl) {
-      record['preview_url'] = this._previewUrl;
+    if (this.#previewUrl) {
+      record['preview_url'] = this.#previewUrl;
     }
 
     return record;

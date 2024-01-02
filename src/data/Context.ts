@@ -1,18 +1,18 @@
 export class Context {
-  private _messageId: string;
+  #messageId: string;
 
   public set messageId(messageId: string) {
-    this._messageId = messageId;
+    this.#messageId = messageId;
   }
 
   public get messageId(): string {
-    return this._messageId;
+    return this.#messageId;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['message_d'] = this._messageId;
+    record['message_d'] = this.#messageId;
 
     return record;
   }

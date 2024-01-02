@@ -1,71 +1,71 @@
 export class Media {
-  private _id?: string;
-  private _link?: string;
-  private _caption?: string;
-  private _fileName?: string;
-  private _provider?: string;
+  #id?: string;
+  #link?: string;
+  #caption?: string;
+  #fileName?: string;
+  #provider?: string;
 
   public set id(id: string) {
-    this._id = id;
+    this.#id = id;
   }
 
   public get id(): string | undefined {
-    return this._id;
+    return this.#id;
   }
 
   public set link(link: string) {
-    this._link = link;
+    this.#link = link;
   }
 
   public get link(): string | undefined {
-    return this._link;
+    return this.#link;
   }
 
   public set caption(caption: string) {
-    this._caption = caption;
+    this.#caption = caption;
   }
 
   public get caption(): string | undefined {
-    return this._caption;
+    return this.#caption;
   }
 
   public set fileName(fileName: string) {
-    this._fileName = fileName;
+    this.#fileName = fileName;
   }
 
   public get fileName(): string | undefined {
-    return this._fileName;
+    return this.#fileName;
   }
 
   public set provider(provider: string) {
-    this._provider = provider;
+    this.#provider = provider;
   }
 
   public get provider(): string | undefined {
-    return this._provider;
+    return this.#provider;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    if (this._id) {
-      record['id'] = this._id;
+    if (this.#id) {
+      record['id'] = this.#id;
     }
 
-    if (this._link) {
-      record['link'] = this._link;
+    if (this.#link) {
+      record['link'] = this.#link;
     }
 
-    if (this._caption) {
-      record['caption'] = this._caption;
+    if (this.#caption) {
+      record['caption'] = this.#caption;
     }
 
-    if (this._fileName) {
-      record['filename'] = this._fileName;
+    if (this.#fileName) {
+      record['filename'] = this.#fileName;
     }
 
-    if (this._provider) {
-      record['provider'] = this._provider;
+    if (this.#provider) {
+      record['provider'] = this.#provider;
     }
 
     return record;

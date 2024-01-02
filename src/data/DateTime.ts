@@ -1,34 +1,34 @@
 import { CalendarType, DayOfWeek } from '@vyrnnstudios/messages/enums';
 
 export class DateTime {
-  private _component?: DateTimeComponent;
-  private _unixEpoch?: DateTimeEpoch;
+  #component?: DateTimeComponent;
+  #unixEpoch?: DateTimeEpoch;
 
   public set component(component: DateTimeComponent) {
-    this._component = component;
+    this.#component = component;
   }
 
   public get component(): DateTimeComponent | undefined {
-    return this._component;
+    return this.#component;
   }
 
   public set unixEpoch(unixEpoch: DateTimeEpoch) {
-    this._unixEpoch = unixEpoch;
+    this.#unixEpoch = unixEpoch;
   }
 
   public get unixEpoch(): DateTimeEpoch | undefined {
-    return this._unixEpoch;
+    return this.#unixEpoch;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    if (this._component) {
-      record['component'] = this._component;
+    if (this.#component) {
+      record['component'] = this.#component;
     }
 
-    if (this._unixEpoch) {
-      record['unix_epoch'] = this._unixEpoch;
+    if (this.#unixEpoch) {
+      record['unix_epoch'] = this.#unixEpoch;
     }
 
     return record;
@@ -36,112 +36,112 @@ export class DateTime {
 }
 
 export class DateTimeComponent {
-  private _calendar?: CalendarType;
+  #calendar?: CalendarType;
 
-  private _dayOfMonth: number;
-  private _dayOfWeek?: DayOfWeek;
+  #dayOfMonth: number;
+  #dayOfWeek?: DayOfWeek;
 
-  private _year?: number;
-  private _month: number;
-  private _hour: number;
-  private _minute: number;
+  #year?: number;
+  #month: number;
+  #hour: number;
+  #minute: number;
 
   public set calendar(calendar: CalendarType) {
-    this._calendar = calendar;
+    this.#calendar = calendar;
   }
 
   public get calendar(): CalendarType | undefined {
-    return this._calendar;
+    return this.#calendar;
   }
 
   public set dayOfMonth(dayOfMonth: number) {
-    this._dayOfMonth = dayOfMonth;
+    this.#dayOfMonth = dayOfMonth;
   }
 
   public get dayOfMonth(): number {
-    return this._dayOfMonth;
+    return this.#dayOfMonth;
   }
 
   public set dayOfWeek(dayOfWeek: DayOfWeek) {
-    this._dayOfWeek = dayOfWeek;
+    this.#dayOfWeek = dayOfWeek;
   }
 
   public get dayOfWeek(): DayOfWeek | undefined {
-    return this._dayOfWeek;
+    return this.#dayOfWeek;
   }
 
   public set year(year: number) {
-    this._year = year;
+    this.#year = year;
   }
 
   public get year(): number | undefined {
-    return this._year;
+    return this.#year;
   }
 
   public set month(month: number) {
-    this._month = month;
+    this.#month = month;
   }
 
   public get month(): number {
-    return this._month;
+    return this.#month;
   }
 
   public set hour(hour: number) {
-    this._hour = hour;
+    this.#hour = hour;
   }
 
   public get hour(): number {
-    return this._hour;
+    return this.#hour;
   }
 
   public set minute(minute: number) {
-    this._minute = minute;
+    this.#minute = minute;
   }
 
   public get minute(): number {
-    return this._minute;
+    return this.#minute;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    if (this._calendar) {
-      record['calendar'] = this._calendar;
+    if (this.#calendar) {
+      record['calendar'] = this.#calendar;
     }
 
-    record['day_of_month'] = this._dayOfMonth;
+    record['day_of_month'] = this.#dayOfMonth;
 
-    if (this._dayOfWeek) {
-      record['day_of_week'] = this._dayOfWeek;
+    if (this.#dayOfWeek) {
+      record['day_of_week'] = this.#dayOfWeek;
     }
 
-    if (this._year) {
-      record['year'] = this._year;
+    if (this.#year) {
+      record['year'] = this.#year;
     }
 
-    record['month'] = this._month;
-    record['hour'] = this._hour;
-    record['minute'] = this._minute;
+    record['month'] = this.#month;
+    record['hour'] = this.#hour;
+    record['minute'] = this.#minute;
 
     return record;
   }
 }
 
 export class DateTimeEpoch {
-  private _timestamp: number;
+  #timestamp: number;
 
   public set timestamp(timestamp: number) {
-    this._timestamp = timestamp;
+    this.#timestamp = timestamp;
   }
 
   public get timestamp(): number {
-    return this._timestamp;
+    return this.#timestamp;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['timestamp'] = this._timestamp;
+    record['timestamp'] = this.#timestamp;
 
     return record;
   }

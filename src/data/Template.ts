@@ -5,52 +5,52 @@ import { DateTime } from '@vyrnnstudios/messages/data/DateTime';
 import { TemplateComponentParameterType, TemplateIndex } from '@vyrnnstudios/messages/enums';
 
 export class Template {
-  private _name: string;
-  private _language: string;
-  private _components: Array<TemplateComponent>;
-  private _namespace?: string;
+  #name: string;
+  #language: string;
+  #components: Array<TemplateComponent>;
+  #namespace?: string;
 
   public set name(name: string) {
-    this._name = name;
+    this.#name = name;
   }
 
   public get name(): string {
-    return this._name;
+    return this.#name;
   }
 
   public set language(language: string) {
-    this._language = language;
+    this.#language = language;
   }
 
   public get language(): string {
-    return this._language;
+    return this.#language;
   }
 
   public set components(components: Array<TemplateComponent>) {
-    this._components = components;
+    this.#components = components;
   }
 
   public get components(): Array<TemplateComponent> {
-    return this._components;
+    return this.#components;
   }
 
   public set namespace(namespace: string) {
-    this._namespace = namespace;
+    this.#namespace = namespace;
   }
 
   public get namespace(): string | undefined {
-    return this._namespace;
+    return this.#namespace;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['name'] = this._name;
-    record['language'] = this._language;
-    record['components'] = this._components;
+    record['name'] = this.#name;
+    record['language'] = this.#language;
+    record['components'] = this.#components;
 
-    if (this._namespace) {
-      record['namespace'] = this._namespace;
+    if (this.#namespace) {
+      record['namespace'] = this.#namespace;
     }
 
     return record;
@@ -58,152 +58,152 @@ export class Template {
 }
 
 export class TemplateComponent {
-  private _type: string;
-  private _subType?: string;
-  private _parameters: Array<TemplateComponentParameter>;
-  private _index: TemplateIndex;
+  #type: string;
+  #subType?: string;
+  #parameters: Array<TemplateComponentParameter>;
+  #index: TemplateIndex;
 
   public set type(type: string) {
-    this._type = type;
+    this.#type = type;
   }
 
   public get type(): string {
-    return this._type;
+    return this.#type;
   }
 
   public set subType(subType: string) {
-    this._subType = subType;
+    this.#subType = subType;
   }
 
   public get subType(): string | undefined {
-    return this._subType;
+    return this.#subType;
   }
 
   public set parameters(parameters: Array<TemplateComponentParameter>) {
-    this._parameters = parameters;
+    this.#parameters = parameters;
   }
 
   public get parameters(): Array<TemplateComponentParameter> {
-    return this._parameters;
+    return this.#parameters;
   }
 
   public set index(index: TemplateIndex) {
-    this._index = index;
+    this.#index = index;
   }
 
   public get index(): TemplateIndex {
-    return this._index;
+    return this.#index;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['type'] = this._type;
+    record['type'] = this.#type;
 
-    if (this._subType) {
-      record['sub_type'] = this._subType;
+    if (this.#subType) {
+      record['sub_type'] = this.#subType;
     }
 
-    record['parameters'] = this._parameters;
-    record['index'] = this._index;
+    record['parameters'] = this.#parameters;
+    record['index'] = this.#index;
 
     return record;
   }
 }
 
 export class TemplateComponentParameter {
-  private _type: TemplateComponentParameterType;
+  #type: TemplateComponentParameterType;
 
-  private _text?: string;
-  private _currency?: Currency;
-  private _dateTime?: DateTime;
-  private _image?: Media;
-  private _video?: Media;
-  private _document?: Media;
+  #text?: string;
+  #currency?: Currency;
+  #dateTime?: DateTime;
+  #image?: Media;
+  #video?: Media;
+  #document?: Media;
 
   public set type(type: TemplateComponentParameterType) {
-    this._type = type;
+    this.#type = type;
   }
 
   public get type(): TemplateComponentParameterType {
-    return this._type;
+    return this.#type;
   }
 
   public set text(text: string) {
-    this._text = text;
+    this.#text = text;
   }
 
   public get text(): string | undefined {
-    return this._text;
+    return this.#text;
   }
 
   public set currency(currency: Currency) {
-    this._currency = currency;
+    this.#currency = currency;
   }
 
   public get currency(): Currency | undefined {
-    return this._currency;
+    return this.#currency;
   }
 
   public set dateTime(dateTime: DateTime) {
-    this._dateTime = dateTime;
+    this.#dateTime = dateTime;
   }
 
   public get dateTime(): DateTime | undefined {
-    return this._dateTime;
+    return this.#dateTime;
   }
 
   public set image(image: Media) {
-    this._image = image;
+    this.#image = image;
   }
 
   public get image(): Media | undefined {
-    return this._image;
+    return this.#image;
   }
 
   public set video(video: Media) {
-    this._video = video;
+    this.#video = video;
   }
 
   public get video(): Media | undefined {
-    return this._video;
+    return this.#video;
   }
 
   public set document(document: Media) {
-    this._document = document;
+    this.#document = document;
   }
 
   public get document(): Media | undefined {
-    return this._document;
+    return this.#document;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['type'] = this._type;
+    record['type'] = this.#type;
 
-    if (this._text) {
-      record['text'] = this._text;
+    if (this.#text) {
+      record['text'] = this.#text;
     }
 
-    if (this._currency) {
-      record['currency'] = this._currency;
+    if (this.#currency) {
+      record['currency'] = this.#currency;
     }
 
-    if (this._dateTime) {
-      record['date_time'] = this._dateTime;
+    if (this.#dateTime) {
+      record['date_time'] = this.#dateTime;
     }
 
-    if (this._image) {
-      record['image'] = this._image;
+    if (this.#image) {
+      record['image'] = this.#image;
     }
 
-    if (this._video) {
-      record['video'] = this._video;
+    if (this.#video) {
+      record['video'] = this.#video;
     }
 
-    if (this._document) {
-      record['document'] = this._document;
+    if (this.#document) {
+      record['document'] = this.#document;
     }
 
     return record;

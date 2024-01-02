@@ -1,18 +1,18 @@
 export class Text {
-  private _body: string;
+  #body: string;
 
   public set body(body: string) {
-    this._body = body;
+    this.#body = body;
   }
 
   public get body(): string {
-    return this._body;
+    return this.#body;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['body'] = this._body;
+    record['body'] = this.#body;
 
     return record;
   }
