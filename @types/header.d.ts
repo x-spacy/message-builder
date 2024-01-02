@@ -1,15 +1,11 @@
-/// <reference path="enums.d.ts" />
-/// <reference path="data.d.ts" />
-
-declare module '@vyrnnstudios/messages/build/HeaderBuilder' {
+declare module '@vyrnnstudios/messages' {
   import {
     Header,
     HeaderImage,
     HeaderVideo,
-    HeaderDocument
-  } from '@vyrnnstudios/messages/data';
-
-  import { HeaderType } from '@vyrnnstudios/messages/enums';
+    HeaderDocument,
+    HeaderType
+  } from '@vyrnnstudios/messages';
 
   export class HeaderBuilder {
     public static newBuilder(): HeaderBuilder

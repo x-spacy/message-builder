@@ -1,7 +1,4 @@
-/// <reference path="enums.d.ts" />
-/// <reference path="build.d.ts" />
-
-declare module '@vyrnnstudios/messages/data' {
+declare module '@vyrnnstudios/messages' {
   import {
     MessageType,
     RecipientType,
@@ -13,12 +10,11 @@ declare module '@vyrnnstudios/messages/data' {
     DayOfWeek,
     ContactAddressType,
     ContactEmailType,
-    ContactOrgType,
+    ContactPhoneType,
     ContactUrlType,
-    InteractiveType
-  } from '@vyrnnstudios/messages/enums';
-
-  import { HeaderBuilder } from '@vyrnnstudios/messages/build';
+    InteractiveType,
+    HeaderBuilder
+  } from '@vyrnnstudios/messages';
 
   export class Message {
     public set to(to: string)
@@ -367,9 +363,9 @@ declare module '@vyrnnstudios/messages/data' {
 
     public get phone(): string | undefined
 
-    public set type(type: ContactOrgType)
+    public set type(type: ContactPhoneType)
 
-    public get type(): ContactOrgType | undefined
+    public get type(): ContactPhoneType | undefined
 
     public set waId(waId: string)
 

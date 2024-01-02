@@ -1,7 +1,5 @@
-/// <reference path="data.d.ts" />
-
-declare module '@vyrnnstudios/messages/build/LocationBuilder' {
-  import { Location } from '@vyrnnstudios/messages/data';
+declare module '@vyrnnstudios/messages' {
+  import { Location } from '@vyrnnstudios/messages';
 
   export class LocationBuilder {
     public static newBuilder(): LocationBuilder

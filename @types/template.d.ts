@@ -1,17 +1,14 @@
-/// <reference path="data.d.ts" />
-/// <reference path="enums.d.ts" />
-
-declare module '@vyrnnstudios/messages/build/TemplateBuilder' {
+declare module '@vyrnnstudios/messages' {
   import {
     Template,
     TemplateComponent,
     TemplateComponentParameter,
     Currency,
     DateTime,
-    Media
-  } from '@vyrnnstudios/messages/data';
-
-  import { TemplateComponentParameterType, TemplateIndex } from '@vyrnnstudios/messages/enums';
+    Media,
+    TemplateComponentParameterType,
+    TemplateIndex
+  } from '@vyrnnstudios/messages';
 
   export class TemplateBuilder {
     public static newBuilder(): TemplateBuilder

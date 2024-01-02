@@ -1,9 +1,3 @@
-/// <reference path="data.d.ts" />
-/// <reference path="text.d.ts" />
-/// <reference path="interactive.d.ts" />
-/// <reference path="enums.d.ts" />
-/// <reference path="build.d.ts" />
-
 declare module '@vyrnnstudios/messages' {
   import {
     Message,
@@ -12,24 +6,18 @@ declare module '@vyrnnstudios/messages' {
     Media,
     Context,
     Contact,
-    Template
-  } from '@vyrnnstudios/messages/data';
-
-  import {
+    Template,
     TextBuilder,
     InteractiveBuilder,
     MediaBuilder,
     LocationBuilder,
     TemplateBuilder,
     ContactBuilder,
-    ContextBuilder
-  } from '@vyrnnstudios/messages/build';
-
-  import {
+    ContextBuilder,
     MessageType,
     MessagingProduct,
     RecipientType
-  } from '@vyrnnstudios/messages/enums';
+  } from '@vyrnnstudios/messages';
 
   export class MessageBuilder {
     public static newBuilder(): MessageBuilder
@@ -72,10 +60,4 @@ declare module '@vyrnnstudios/messages' {
 
     public build(): Message
   }
-
-  export * from '@vyrnnstudios/messages/data';
-
-  export * from '@vyrnnstudios/messages/build';
-
-  export * from '@vyrnnstudios/messages/enums';
 }

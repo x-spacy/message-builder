@@ -1,4 +1,4 @@
-declare module '@vyrnnstudios/messages/build/TextBuilder' {
+declare module '@vyrnnstudios/messages' {
   export class TextBuilder {
     public static newBuilder(): TextBuilder
 
