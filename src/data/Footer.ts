@@ -1,18 +1,18 @@
 export class Footer {
-  private _text: string;
+  #text: string;
 
   public set text(text: string) {
-    this._text = text;
+    this.#text = text;
   }
 
   public get text(): string {
-    return this._text;
+    return this.#text;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['text'] = this._text;
+    record['text'] = this.#text;
 
     return record;
   }

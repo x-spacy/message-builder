@@ -1,71 +1,71 @@
 import { HeaderType } from '@vyrnnstudios/messages/enums';
 
 export class Header {
-  private _type: HeaderType;
-  private _text?: string;
-  private _image?: HeaderImage;
-  private _video?: HeaderVideo;
-  private _document?: HeaderDocument;
+  #type: HeaderType;
+  #text?: string;
+  #image?: HeaderImage;
+  #video?: HeaderVideo;
+  #document?: HeaderDocument;
 
   public set type(type: HeaderType) {
-    this._type = type;
+    this.#type = type;
   }
 
   public get type(): HeaderType {
-    return this._type;
+    return this.#type;
   }
 
   public set text(text: string) {
-    this._text = text;
+    this.#text = text;
   }
 
   public get text(): string | undefined {
-    return this._text;
+    return this.#text;
   }
 
   public set image(image: HeaderImage) {
-    this._image = image;
+    this.#image = image;
   }
 
   public get image(): HeaderImage | undefined {
-    return this._image;
+    return this.#image;
   }
 
   public set video(video: HeaderVideo) {
-    this._video = video;
+    this.#video = video;
   }
 
   public get video(): HeaderVideo | undefined {
-    return this._video;
+    return this.#video;
   }
 
   public set document(document: HeaderDocument) {
-    this._document = document;
+    this.#document = document;
   }
 
   public get document(): HeaderDocument | undefined {
-    return this._document;
+    return this.#document;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['type'] = this._type;
+    record['type'] = this.#type;
 
-    if (this._text) {
-      record['text'] = this._text;
+    if (this.#text) {
+      record['text'] = this.#text;
     }
 
-    if (this._image) {
-      record['image'] = this._image;
+    if (this.#image) {
+      record['image'] = this.#image;
     }
 
-    if (this._video) {
-      record['video'] = this._video;
+    if (this.#video) {
+      record['video'] = this.#video;
     }
 
-    if (this._document) {
-      record['document'] = this._document;
+    if (this.#document) {
+      record['document'] = this.#document;
     }
 
     return record;
@@ -73,69 +73,69 @@ export class Header {
 }
 
 export class HeaderProvider {
-  private _name: string;
+  #name: string;
 
   public set name(name: string) {
-    this._name = name;
+    this.#name = name;
   }
 
   public get name(): string {
-    return this._name;
+    return this.#name;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['name'] = this._name;
+    record['name'] = this.#name;
 
     return record;
   }
 }
 
 export class HeaderImage {
-  private _id?: string;
+  #id?: string;
 
-  private _link?: string;
+  #link?: string;
 
-  private _provider?: HeaderProvider;
+  #provider?: HeaderProvider;
 
   public set id(id: string) {
-    this._id = id;
+    this.#id = id;
   }
 
   public get id(): string | undefined {
-    return this._id;
+    return this.#id;
   }
 
   public set link(link: string) {
-    this._link = link;
+    this.#link = link;
   }
 
   public get link(): string | undefined {
-    return this._link;
+    return this.#link;
   }
 
   public set provider(provider: HeaderProvider) {
-    this._provider = provider;
+    this.#provider = provider;
   }
 
   public get provider(): HeaderProvider | undefined {
-    return this._provider;
+    return this.#provider;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    if (this._id) {
-      record['id'] = this._id;
+    if (this.#id) {
+      record['id'] = this.#id;
     }
 
-    if (this._link) {
-      record['link'] = this._link;
+    if (this.#link) {
+      record['link'] = this.#link;
     }
 
-    if (this._provider) {
-      record['provider'] = this._provider;
+    if (this.#provider) {
+      record['provider'] = this.#provider;
     }
 
     return record;
@@ -143,49 +143,49 @@ export class HeaderImage {
 }
 
 export class HeaderVideo {
-  private _id?: string;
+  #id?: string;
 
-  private _link?: string;
+  #link?: string;
 
-  private _provider?: HeaderProvider;
+  #provider?: HeaderProvider;
 
   public set id(id: string) {
-    this._id = id;
+    this.#id = id;
   }
 
   public get id(): string | undefined {
-    return this._id;
+    return this.#id;
   }
 
   public set link(link: string) {
-    this._link = link;
+    this.#link = link;
   }
 
   public get link(): string | undefined {
-    return this._link;
+    return this.#link;
   }
 
   public set provider(provider: HeaderProvider) {
-    this._provider = provider;
+    this.#provider = provider;
   }
 
   public get provider(): HeaderProvider | undefined {
-    return this._provider;
+    return this.#provider;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    if (this._id) {
-      record['id'] = this._id;
+    if (this.#id) {
+      record['id'] = this.#id;
     }
 
-    if (this._link) {
-      record['link'] = this._link;
+    if (this.#link) {
+      record['link'] = this.#link;
     }
 
-    if (this._provider) {
-      record['provider'] = this._provider;
+    if (this.#provider) {
+      record['provider'] = this.#provider;
     }
 
     return record;
@@ -193,62 +193,62 @@ export class HeaderVideo {
 }
 
 export class HeaderDocument {
-  private _id?: string;
+  #id?: string;
 
-  private _link?: string;
-  private _provider?: HeaderProvider;
+  #link?: string;
+  #provider?: HeaderProvider;
 
-  private _fileName?: string;
+  #fileName?: string;
 
   public set id(id: string) {
-    this._id = id;
+    this.#id = id;
   }
 
   public get id(): string | undefined {
-    return this._id;
+    return this.#id;
   }
 
   public set link(link: string) {
-    this._link = link;
+    this.#link = link;
   }
 
   public get link(): string | undefined {
-    return this._link;
+    return this.#link;
   }
 
   public set provider(provider: HeaderProvider) {
-    this._provider = provider;
+    this.#provider = provider;
   }
 
   public get provider(): HeaderProvider | undefined {
-    return this._provider;
+    return this.#provider;
   }
 
   public set fileName(fileName: string) {
-    this._fileName = fileName;
+    this.#fileName = fileName;
   }
 
   public get fileName(): string | undefined {
-    return this._fileName;
+    return this.#fileName;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    if (this._id) {
-      record['id'] = this._id;
+    if (this.#id) {
+      record['id'] = this.#id;
     }
 
-    if (this._link) {
-      record['link'] = this._link;
+    if (this.#link) {
+      record['link'] = this.#link;
     }
 
-    if (this._provider) {
-      record['provider'] = this._provider;
+    if (this.#provider) {
+      record['provider'] = this.#provider;
     }
 
-    if (this._fileName) {
-      record['filename'] = this._fileName;
+    if (this.#fileName) {
+      record['filename'] = this.#fileName;
     }
 
     return record;

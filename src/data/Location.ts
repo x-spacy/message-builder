@@ -1,48 +1,48 @@
 export class Location {
-  private _longitude: number;
-  private _latitude: number;
-  private _name: string;
-  private _address: string;
+  #longitude: number;
+  #latitude: number;
+  #name: string;
+  #address: string;
 
   public set longitude(longitude: number) {
-    this._longitude = longitude;
+    this.#longitude = longitude;
   }
 
   public get longitude(): number {
-    return this._longitude;
+    return this.#longitude;
   }
 
   public set latitude(latitude: number) {
-    this._latitude = latitude;
+    this.#latitude = latitude;
   }
 
   public get latitude(): number {
-    return this._latitude;
+    return this.#latitude;
   }
 
   public set name(name: string) {
-    this._name = name;
+    this.#name = name;
   }
 
   public get name(): string {
-    return this._name;
+    return this.#name;
   }
 
   public set address(address: string) {
-    this._address = address;
+    this.#address = address;
   }
 
   public get address(): string {
-    return this._address;
+    return this.#address;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['longitude'] = this._longitude;
-    record['latitude'] = this._latitude;
-    record['name'] = this._name;
-    record['address'] = this._address;
+    record['longitude'] = this.#longitude;
+    record['latitude'] = this.#latitude;
+    record['name'] = this.#name;
+    record['address'] = this.#address;
 
     return record;
   }

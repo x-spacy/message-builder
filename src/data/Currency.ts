@@ -1,28 +1,28 @@
 export class Currency {
-  private _code: string;
-  private _amount1000: number;
+  #code: string;
+  #amount1000: number;
 
   public set code(code: string) {
-    this._code = code;
+    this.#code = code;
   }
 
   public get code(): string {
-    return this._code;
+    return this.#code;
   }
 
   public set amount1000(amount1000: number) {
-    this._amount1000 = amount1000;
+    this.#amount1000 = amount1000;
   }
 
   public get amount1000(): number {
-    return this._amount1000;
+    return this.#amount1000;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['code'] = this._code;
-    record['amount_1000'] = this._amount1000;
+    record['code'] = this.#code;
+    record['amount_1000'] = this.#amount1000;
 
     return record;
   }

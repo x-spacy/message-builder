@@ -6,165 +6,165 @@ import {
 } from '@vyrnnstudios/messages/enums';
 
 export class Contact {
-  private _addresses?: ContactAddress;
-  private _birthday?: string;
-  private _emails?: ContactEmail;
-  private _name?: ContactName;
-  private _org?: ContactOrg;
-  private _phones?: ContactPhone;
-  private _urls?: ContactUrl;
+  #addresses?: ContactAddress;
+  #birthday?: string;
+  #emails?: ContactEmail;
+  #name?: ContactName;
+  #org?: ContactOrg;
+  #phones?: ContactPhone;
+  #urls?: ContactUrl;
 
   public set addresses(addresses: ContactAddress) {
-    this._addresses = addresses;
+    this.#addresses = addresses;
   }
 
   public get addresses(): ContactAddress | undefined {
-    return this._addresses;
+    return this.#addresses;
   }
 
   public set birthday(birthday: string) {
-    this._birthday = birthday;
+    this.#birthday = birthday;
   }
 
   public get birthday(): string | undefined {
-    return this._birthday;
+    return this.#birthday;
   }
 
   public set emails(emails: ContactEmail) {
-    this._emails = emails;
+    this.#emails = emails;
   }
 
   public get emails(): ContactEmail | undefined {
-    return this._emails;
+    return this.#emails;
   }
 
   public set name(name: ContactName) {
-    this._name = name;
+    this.#name = name;
   }
 
   public get name(): ContactName | undefined {
-    return this._name;
+    return this.#name;
   }
 
   public set org(org: ContactOrg) {
-    this._org = org;
+    this.#org = org;
   }
 
   public get org(): ContactOrg | undefined {
-    return this._org;
+    return this.#org;
   }
 
   public set phones(phones: ContactPhone) {
-    this._phones = phones;
+    this.#phones = phones;
   }
 
   public get phones(): ContactPhone | undefined {
-    return this._phones;
+    return this.#phones;
   }
 
   public set urls(urls: ContactUrl) {
-    this._urls = urls;
+    this.#urls = urls;
   }
 
   public get urls(): ContactUrl | undefined {
-    return this._urls;
+    return this.#urls;
   }
 }
 
 export class ContactAddress {
-  private _street?: string;
-  private _city?: string;
-  private _state?: string;
-  private _zip?: string;
-  private _country?: string;
-  private _countryCode?: string;
-  private _type?: ContactAddressType;
+  #street?: string;
+  #city?: string;
+  #state?: string;
+  #zip?: string;
+  #country?: string;
+  #countryCode?: string;
+  #type?: ContactAddressType;
 
   public set street(street: string) {
-    this._street = street;
+    this.#street = street;
   }
 
   public get street(): string | undefined {
-    return this._street;
+    return this.#street;
   }
 
   public set city(city: string) {
-    this._city = city;
+    this.#city = city;
   }
 
   public get city(): string | undefined {
-    return this._city;
+    return this.#city;
   }
 
   public set state(state: string) {
-    this._state = state;
+    this.#state = state;
   }
 
   public get state(): string | undefined {
-    return this._state;
+    return this.#state;
   }
 
   public set zip(zip: string) {
-    this._zip = zip;
+    this.#zip = zip;
   }
 
   public get zip(): string | undefined {
-    return this._zip;
+    return this.#zip;
   }
 
   public set country(country: string) {
-    this._country = country;
+    this.#country = country;
   }
 
   public get country(): string | undefined {
-    return this._country;
+    return this.#country;
   }
 
   public set countryCode(countryCode: string) {
-    this._countryCode = countryCode;
+    this.#countryCode = countryCode;
   }
 
   public get countryCode(): string | undefined {
-    return this._countryCode;
+    return this.#countryCode;
   }
 
   public set type(type: ContactAddressType) {
-    this._type = type;
+    this.#type = type;
   }
 
   public get type(): ContactAddressType | undefined {
-    return this._type;
+    return this.#type;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    if (this._street) {
-      record['street'] = this._street;
+    if (this.#street) {
+      record['street'] = this.#street;
     }
 
-    if (this._city) {
-      record['city'] = this._city;
+    if (this.#city) {
+      record['city'] = this.#city;
     }
 
-    if (this._state) {
-      record['state'] = this._state;
+    if (this.#state) {
+      record['state'] = this.#state;
     }
 
-    if (this._zip) {
-      record['zip'] = this._zip;
+    if (this.#zip) {
+      record['zip'] = this.#zip;
     }
 
-    if (this._country) {
-      record['country'] = this._country;
+    if (this.#country) {
+      record['country'] = this.#country;
     }
 
-    if (this._countryCode) {
-      record['country_code'] = this._countryCode;
+    if (this.#countryCode) {
+      record['country_code'] = this.#countryCode;
     }
 
-    if (this._type) {
-      record['type'] = this._type;
+    if (this.#type) {
+      record['type'] = this.#type;
     }
 
     return record;
@@ -172,34 +172,34 @@ export class ContactAddress {
 }
 
 export class ContactEmail {
-  private _email?: string;
-  private _type?: ContactEmailType;
+  #email?: string;
+  #type?: ContactEmailType;
 
   public set email(email: string) {
-    this._email = email;
+    this.#email = email;
   }
 
   public get email(): string | undefined {
-    return this._email;
+    return this.#email;
   }
 
   public set type(type: ContactEmailType) {
-    this._type = type;
+    this.#type = type;
   }
 
   public get type(): ContactEmailType | undefined {
-    return this._type;
+    return this.#type;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    if (this._email) {
-      record['email'] = this._email;
+    if (this.#email) {
+      record['email'] = this.#email;
     }
 
-    if (this._type) {
-      record['type'] = this._type;
+    if (this.#type) {
+      record['type'] = this.#type;
     }
 
     return record;
@@ -207,84 +207,84 @@ export class ContactEmail {
 }
 
 export class ContactName {
-  private _formattedName: string;
-  private _firstName?: string;
-  private _lastName?: string;
-  private _middleName?: string;
-  private _prefix?: string;
-  private _suffix?: string;
+  #formattedName: string;
+  #firstName?: string;
+  #lastName?: string;
+  #middleName?: string;
+  #prefix?: string;
+  #suffix?: string;
 
   public set formattedName(formattedName: string) {
-    this._formattedName = formattedName;
+    this.#formattedName = formattedName;
   }
 
   public get formattedName(): string {
-    return this._formattedName;
+    return this.#formattedName;
   }
 
   public set firstName(firstName: string) {
-    this._firstName = firstName;
+    this.#firstName = firstName;
   }
 
   public get firstName(): string | undefined {
-    return this._firstName;
+    return this.#firstName;
   }
 
   public set lastName(lastName: string) {
-    this._lastName = lastName;
+    this.#lastName = lastName;
   }
 
   public get lastName(): string | undefined {
-    return this._lastName;
+    return this.#lastName;
   }
 
   public set middleName(middleName: string) {
-    this._middleName = middleName;
+    this.#middleName = middleName;
   }
 
   public get middleName(): string | undefined {
-    return this._middleName;
+    return this.#middleName;
   }
 
   public set prefix(prefix: string) {
-    this._prefix = prefix;
+    this.#prefix = prefix;
   }
 
   public get prefix(): string | undefined {
-    return this._prefix;
+    return this.#prefix;
   }
 
   public set suffix(suffix: string) {
-    this._suffix = suffix;
+    this.#suffix = suffix;
   }
 
   public get suffix(): string | undefined {
-    return this._suffix;
+    return this.#suffix;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    record['formatted_name'] = this._formattedName;
+    record['formatted_name'] = this.#formattedName;
 
-    if (this._firstName) {
-      record['first_name'] = this._firstName;
+    if (this.#firstName) {
+      record['first_name'] = this.#firstName;
     }
 
-    if (this._lastName) {
-      record['last_name'] = this._lastName;
+    if (this.#lastName) {
+      record['last_name'] = this.#lastName;
     }
 
-    if (this._middleName) {
-      record['middle_name'] = this._middleName;
+    if (this.#middleName) {
+      record['middle_name'] = this.#middleName;
     }
 
-    if (this._prefix) {
-      record['prefix'] = this._prefix;
+    if (this.#prefix) {
+      record['prefix'] = this.#prefix;
     }
 
-    if (this._suffix) {
-      record['suffix'] = this._suffix;
+    if (this.#suffix) {
+      record['suffix'] = this.#suffix;
     }
 
     return record;
@@ -292,47 +292,47 @@ export class ContactName {
 }
 
 export class ContactOrg {
-  private _company?: string;
-  private _department?: string;
-  private _title?: string;
+  #company?: string;
+  #department?: string;
+  #title?: string;
 
   public set company(company: string) {
-    this._company = company;
+    this.#company = company;
   }
 
   public get company(): string | undefined {
-    return this._company;
+    return this.#company;
   }
 
   public set department(department: string) {
-    this._department = department;
+    this.#department = department;
   }
 
   public get department(): string | undefined {
-    return this._department;
+    return this.#department;
   }
 
   public set title(title: string) {
-    this._title = title;
+    this.#title = title;
   }
 
   public get title(): string | undefined {
-    return this._title;
+    return this.#title;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    if (this._company) {
-      record['company'] = this._company;
+    if (this.#company) {
+      record['company'] = this.#company;
     }
 
-    if (this._department) {
-      record['department'] = this._department;
+    if (this.#department) {
+      record['department'] = this.#department;
     }
 
-    if (this._title) {
-      record['title'] = this._title;
+    if (this.#title) {
+      record['title'] = this.#title;
     }
 
     return record;
@@ -340,47 +340,47 @@ export class ContactOrg {
 }
 
 export class ContactPhone {
-  private _phone?: string;
-  private _type?: ContactPhoneType;
-  private _waId?: string;
+  #phone?: string;
+  #type?: ContactPhoneType;
+  #waId?: string;
 
   public set phone(phone: string) {
-    this._phone = phone;
+    this.#phone = phone;
   }
 
   public get phone(): string | undefined {
-    return this._phone;
+    return this.#phone;
   }
 
   public set type(type: ContactPhoneType) {
-    this._type = type;
+    this.#type = type;
   }
 
   public get type(): ContactPhoneType | undefined {
-    return this._type;
+    return this.#type;
   }
 
   public set waId(waId: string) {
-    this._waId = waId;
+    this.#waId = waId;
   }
 
   public get waId(): string | undefined {
-    return this._waId;
+    return this.#waId;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    if (this._phone) {
-      record['phone'] = this._phone;
+    if (this.#phone) {
+      record['phone'] = this.#phone;
     }
 
-    if (this._type) {
-      record['type'] = this._type;
+    if (this.#type) {
+      record['type'] = this.#type;
     }
 
-    if (this._waId) {
-      record['wa_id'] = this._waId;
+    if (this.#waId) {
+      record['wa_id'] = this.#waId;
     }
 
     return record;
@@ -388,34 +388,34 @@ export class ContactPhone {
 }
 
 export class ContactUrl {
-  private _url?: string;
-  private _type?: ContactUrlType;
+  #url?: string;
+  #type?: ContactUrlType;
 
   public set url(url: string) {
-    this._url = url;
+    this.#url = url;
   }
 
   public get url(): string | undefined {
-    return this._url;
+    return this.#url;
   }
 
   public set type(type: ContactUrlType) {
-    this._type = type;
+    this.#type = type;
   }
 
   public get type(): ContactUrlType | undefined {
-    return this._type;
+    return this.#type;
   }
 
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  public toJSON(): Record<string, unknown> {
     const record: Record<string, unknown> = {};
 
-    if (this._url) {
-      record['url'] = this._url;
+    if (this.#url) {
+      record['url'] = this.#url;
     }
 
-    if (this._type) {
-      record['type'] = this._type;
+    if (this.#type) {
+      record['type'] = this.#type;
     }
 
     return record;

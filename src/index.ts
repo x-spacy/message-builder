@@ -1,3 +1,5 @@
+export * from '@vyrnnstudios/messages/enums';
+
 export * from '@vyrnnstudios/messages/build/MessageBuilder';
 
 export * from '@vyrnnstudios/messages/build/TextBuilder';
