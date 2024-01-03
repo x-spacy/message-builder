@@ -85,6 +85,14 @@ export class TemplateComponentBuilder {
     return this;
   }
 
+  public next(): TemplateComponentBuilder {
+    this.templateComponents.push(this.templateComponent);
+
+    this.templateComponent = new TemplateComponent();
+
+    return this;
+  }
+
   public type(type: string): TemplateComponentBuilder {
     this.templateComponent.type = type;
     return this;
@@ -146,6 +154,14 @@ export class TemplateComponentParameterBuilder {
 
   public append(templateComponentParameters: Array<TemplateComponentParameter>): TemplateComponentParameterBuilder {
     this.templateComponentParameters.push(...templateComponentParameters);
+    return this;
+  }
+
+  public next(): TemplateComponentParameterBuilder {
+    this.templateComponentParameters.push(this.templateComponentParameter);
+
+    this.templateComponentParameter = new TemplateComponentParameter();
+
     return this;
   }
 

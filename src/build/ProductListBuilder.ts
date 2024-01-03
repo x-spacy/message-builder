@@ -106,7 +106,9 @@ export class ProductListSectionBuilder {
   }
 
   public build(): Array<ProductListSection> {
-    this.productListSections.push(this.productListSection);
+    if (this.productListSections.indexOf(this.productListSection) === -1) {
+      this.productListSections.push(this.productListSection);
+    }
 
     return this.productListSections;
   }
@@ -151,7 +153,9 @@ export class ProductListSectionProductItemBuilder {
   }
 
   public build(): Array<ProductListSectionProductItem> {
-    this.productListSectionProductItems.push(this.productListSectionProductItem);
+    if (this.productListSectionProductItems.indexOf(this.productListSectionProductItem) === -1) {
+      this.productListSectionProductItems.push(this.productListSectionProductItem);
+    }
 
     return this.productListSectionProductItems;
   }

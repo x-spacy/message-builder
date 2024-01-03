@@ -70,12 +70,14 @@ export class ListSectionBuilder {
   }
 
   public append(section: Array<ListSection>): ListSectionBuilder {
-    this.sections = section;
+    this.sections.push(...section);
     return this;
   }
 
   public next(): ListSectionBuilder {
-    this.sections.push(this.section);
+    if (this.sections.indexOf(this.section) === -1) {
+      this.sections.push(this.section);
+    }
 
     this.section = new ListSection();
 
@@ -104,7 +106,7 @@ export class ListSectionBuilder {
   }
 
   public build(): Array<ListSection> {
-    if (this.sections.length === 0 || this.sections.indexOf(this.section) === -1) {
+    if (this.sections.indexOf(this.section) === -1) {
       this.sections.push(this.section);
     }
 
@@ -132,7 +134,7 @@ export class ListSectionRowsBuilder {
   }
 
   public append(rows: Array<ListSectionRow>): ListSectionRowsBuilder {
-    this.rows = rows;
+    this.rows.push(...rows);
     return this;
   }
 
@@ -160,7 +162,7 @@ export class ListSectionRowsBuilder {
   }
 
   public build(): Array<ListSectionRow> {
-    if (this.rows.length === 0 || this.rows.indexOf(this.row) === -1) {
+    if (this.rows.indexOf(this.row) === -1) {
       this.rows.push(this.row);
     }
 

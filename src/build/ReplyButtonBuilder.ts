@@ -92,6 +92,10 @@ export class ReplyButtonRowsBuilder {
   }
 
   public build(): Array<ReplyButtonRow> {
+    if (this.replyButtonRows.indexOf(this.replyButtonRow) === -1) {
+      this.replyButtonRows.push(this.replyButtonRow);
+    }
+
     return this.replyButtonRows;
   }
 }
