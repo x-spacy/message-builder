@@ -15,6 +15,8 @@ declare module '@vyrnnstudios/messages' {
 
     public static builder(): TemplateBuilder
 
+    public next(): TemplateBuilder
+
     public name(name: string): TemplateBuilder
 
     public language(language: string): TemplateBuilder
