@@ -88,7 +88,7 @@ declare module '@vyrnnstudios/messages' {
 
     public next(): ListSectionRowsBuilder
 
-    public id(id: string): ListSectionRowsBuilder
+    public id(id: string | number): ListSectionRowsBuilder
 
     public title(title: string): ListSectionRowsBuilder
 
@@ -126,7 +126,7 @@ declare module '@vyrnnstudios/messages' {
 
     public static builder(): ReplyButtonRowReplyBuilder
 
-    public id(id: string): ReplyButtonRowReplyBuilder
+    public id(id: string | number): ReplyButtonRowReplyBuilder
 
     public title(title: string): ReplyButtonRowReplyBuilder
 
@@ -138,7 +138,7 @@ declare module '@vyrnnstudios/messages' {
 
     public static builder(): ProductBuilder
 
-    public id(id: string): ProductBuilder
+    public id(id: string | number): ProductBuilder
 
     public productRetailerId(productRetailerId: string): ProductBuilder
 

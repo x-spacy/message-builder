@@ -1,4 +1,8 @@
-import { ReplyButton, ReplyButtonRow, ReplyButtonRowReply } from '@vyrnnstudios/messages/data/Interactive';
+import {
+  ReplyButton,
+  ReplyButtonRow,
+  ReplyButtonRowReply
+} from '@vyrnnstudios/messages/data/Interactive';
 
 export class ReplyButtonBuilder {
   private replyButton: ReplyButton;
@@ -66,7 +70,9 @@ export class ReplyButtonRowsBuilder {
 
   public next(): ReplyButtonRowsBuilder {
     this.replyButtonRows.push(this.replyButtonRow);
+
     this.replyButtonRow = new ReplyButtonRow();
+
     return this;
   }
 
@@ -92,10 +98,6 @@ export class ReplyButtonRowsBuilder {
   }
 
   public build(): Array<ReplyButtonRow> {
-    if (this.replyButtonRows.indexOf(this.replyButtonRow) === -1) {
-      this.replyButtonRows.push(this.replyButtonRow);
-    }
-
     return this.replyButtonRows;
   }
 }

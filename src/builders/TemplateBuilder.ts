@@ -1,4 +1,8 @@
-import { Template, TemplateComponent, TemplateComponentParameter } from '@vyrnnstudios/messages/data/Template';
+import {
+  Template,
+  TemplateComponent,
+  TemplateComponentParameter
+} from '@vyrnnstudios/messages/data/Template';
 import { Currency } from '@vyrnnstudios/messages/data/Currency';
 import { DateTime } from '@vyrnnstudios/messages/data/DateTime';
 import { Media } from '@vyrnnstudios/messages/data/Media';
@@ -125,10 +129,6 @@ export class TemplateComponentBuilder {
   }
 
   public build(): Array<TemplateComponent> {
-    if (this.templateComponents.indexOf(this.templateComponent) === -1) {
-      this.templateComponents.push(this.templateComponent);
-    }
-
     return this.templateComponents;
   }
 }
@@ -201,10 +201,6 @@ export class TemplateComponentParameterBuilder {
   }
 
   public build(): Array<TemplateComponentParameter> {
-    if (this.templateComponentParameters.indexOf(this.templateComponentParameter) === -1) {
-      this.templateComponentParameters.push(this.templateComponentParameter);
-    }
-
     return this.templateComponentParameters;
   }
 }
