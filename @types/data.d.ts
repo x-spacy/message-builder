@@ -13,7 +13,9 @@ declare module '@vyrnnstudios/messages' {
     ContactPhoneType,
     ContactUrlType,
     InteractiveType,
-    HeaderBuilder
+    HeaderBuilder,
+    BodyBuilder,
+    FooterBuilder
   } from '@vyrnnstudios/messages';
 
   export class Message {
@@ -87,7 +89,7 @@ declare module '@vyrnnstudios/messages' {
   }
 
   export class Media {
-    public set id(id: string)
+    public set id(id: string | number)
 
     public get id(): string | undefined
 
@@ -402,6 +404,18 @@ declare module '@vyrnnstudios/messages' {
     public set header(builder: Header | ((builder: HeaderBuilder) => void))
 
     public get header(): Header | undefined
+
+    public set body(body: Body | ((builder: BodyBuilder) => void))
+
+    public get body(): Body
+
+    public set footer(footer: Footer | ((builder: FooterBuilder) => void))
+
+    public get footer(): Footer | undefined
+
+    public set action(action: List | ReplyButton | Product | ProductList | CatalogMessage | Flow)
+
+    public get action(): List | ReplyButton | Product | ProductList | CatalogMessage | Flow
   }
 
   export class Header {
@@ -511,7 +525,7 @@ declare module '@vyrnnstudios/messages' {
   }
 
   export class ListSectionRow {
-    public set id(id: string)
+    public set id(id: string | number)
 
     public get id(): string
 
@@ -541,9 +555,9 @@ declare module '@vyrnnstudios/messages' {
   }
 
   export class ReplyButtonRowReply {
-    public set id(id: string)
+    public set id(id: string | number)
 
-    public get id(): string | undefined
+    public get id(): string | number | undefined
 
     public set title(title: string)
 
@@ -551,9 +565,9 @@ declare module '@vyrnnstudios/messages' {
   }
 
   export class Product {
-    public set id(id: string)
+    public set id(id: string | number)
 
-    public get id(): string
+    public get id(): string | number
 
     public set productRetailerId(productRetailerId: string)
 
@@ -561,9 +575,9 @@ declare module '@vyrnnstudios/messages' {
   }
 
   export class ProductList {
-    public set catalogId(catalogId: string)
+    public set catalogId(catalogId: string | number)
 
-    public get catalogId(): string
+    public get catalogId(): string | number
 
     public set sections(sections: Array<ProductListSection>)
 

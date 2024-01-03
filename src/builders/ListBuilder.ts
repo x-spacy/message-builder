@@ -54,7 +54,7 @@ export class ListSectionBuilder {
   private section: ListSection;
 
   private sections: Array<ListSection>;
-  
+
   constructor() {
     this.section = new ListSection();
 
@@ -75,9 +75,7 @@ export class ListSectionBuilder {
   }
 
   public next(): ListSectionBuilder {
-    if (this.sections.indexOf(this.section) === -1) {
-      this.sections.push(this.section);
-    }
+    this.sections.push(this.section);
 
     this.section = new ListSection();
 
@@ -106,23 +104,19 @@ export class ListSectionBuilder {
   }
 
   public build(): Array<ListSection> {
-    if (this.sections.indexOf(this.section) === -1) {
-      this.sections.push(this.section);
-    }
-
     return this.sections;
   }
 }
 
 export class ListSectionRowsBuilder {
-  private row: ListSectionRow;
+  private listSectionRow: ListSectionRow;
 
-  private rows: Array<ListSectionRow>;
+  private listSectionRows: Array<ListSectionRow>;
 
   constructor() {
-    this.row = new ListSectionRow();
+    this.listSectionRow = new ListSectionRow();
 
-    this.rows = [];
+    this.listSectionRows = [];
   }
 
   public static newBuilder(): ListSectionRowsBuilder {
@@ -134,38 +128,34 @@ export class ListSectionRowsBuilder {
   }
 
   public append(rows: Array<ListSectionRow>): ListSectionRowsBuilder {
-    this.rows.push(...rows);
+    this.listSectionRows.push(...rows);
     return this;
   }
 
   public next(): ListSectionRowsBuilder {
-    this.rows.push(this.row);
+    this.listSectionRows.push(this.listSectionRow);
 
-    this.row = new ListSectionRow();
+    this.listSectionRow = new ListSectionRow();
 
     return this;
   }
 
   public id(id: string): ListSectionRowsBuilder {
-    this.row.id = id;
+    this.listSectionRow.id = id;
     return this;
   }
 
   public title(title: string): ListSectionRowsBuilder {
-    this.row.title = title;
+    this.listSectionRow.title = title;
     return this;
   }
 
   public description(description: string): ListSectionRowsBuilder {
-    this.row.description = description;
+    this.listSectionRow.description = description;
     return this;
   }
 
   public build(): Array<ListSectionRow> {
-    if (this.rows.indexOf(this.row) === -1) {
-      this.rows.push(this.row);
-    }
-
-    return this.rows;
+    return this.listSectionRows;
   }
 }

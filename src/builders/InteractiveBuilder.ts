@@ -12,12 +12,12 @@ import {
   ReplyButton
 } from '@vyrnnstudios/messages/data/Interactive';
 
-import { ListBuilder } from '@vyrnnstudios/messages/build/ListBuilder';
-import { ReplyButtonBuilder } from '@vyrnnstudios/messages/build/ReplyButtonBuilder';
-import { ProductBuilder } from '@vyrnnstudios/messages/build/ProductBuilder';
-import { ProductListBuilder } from '@vyrnnstudios/messages/build/ProductListBuilder';
-import { CatalogMessageBuilder } from '@vyrnnstudios/messages/build/CatalogMessageBuilder';
-import { FlowBuilder } from '@vyrnnstudios/messages/build/FlowBuilder';
+import { ListBuilder } from '@vyrnnstudios/messages/builders/ListBuilder';
+import { ReplyButtonBuilder } from '@vyrnnstudios/messages/builders/ReplyButtonBuilder';
+import { ProductBuilder } from '@vyrnnstudios/messages/builders/ProductBuilder';
+import { ProductListBuilder } from '@vyrnnstudios/messages/builders/ProductListBuilder';
+import { CatalogMessageBuilder } from '@vyrnnstudios/messages/builders/CatalogMessageBuilder';
+import { FlowBuilder } from '@vyrnnstudios/messages/builders/FlowBuilder';
 
 import { InteractiveType } from '@vyrnnstudios/messages/enums';
 
@@ -65,7 +65,7 @@ export class InteractiveBuilder {
     const listBuilder = ListBuilder.newBuilder();
 
     if (list instanceof List) {
-      this.interactive.action = list;
+      listBuilder.append(list);
     }
 
     if (list instanceof Function) {

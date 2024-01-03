@@ -8,15 +8,19 @@ import { Template } from '@vyrnnstudios/messages/data/Template';
 import { Contact } from '@vyrnnstudios/messages/data/Contact';
 import { Context } from '@vyrnnstudios/messages/data/Context';
 
-import { TextBuilder } from '@vyrnnstudios/messages/build/TextBuilder';
-import { InteractiveBuilder } from '@vyrnnstudios/messages/build/InteractiveBuilder';
-import { MediaBuilder } from '@vyrnnstudios/messages/build/MediaBuilder';
-import { LocationBuilder } from '@vyrnnstudios/messages/build/LocationBuilder';
-import { TemplateBuilder } from '@vyrnnstudios/messages/build/TemplateBuilder';
-import { ContactBuilder } from '@vyrnnstudios/messages/build/ContactBuilder';
-import { ContextBuilder } from '@vyrnnstudios/messages/build/ContextBuilder';
+import { TextBuilder } from '@vyrnnstudios/messages/builders/TextBuilder';
+import { InteractiveBuilder } from '@vyrnnstudios/messages/builders/InteractiveBuilder';
+import { MediaBuilder } from '@vyrnnstudios/messages/builders/MediaBuilder';
+import { LocationBuilder } from '@vyrnnstudios/messages/builders/LocationBuilder';
+import { TemplateBuilder } from '@vyrnnstudios/messages/builders/TemplateBuilder';
+import { ContactBuilder } from '@vyrnnstudios/messages/builders/ContactBuilder';
+import { ContextBuilder } from '@vyrnnstudios/messages/builders/ContextBuilder';
 
-import { MessageType, MessagingProduct, RecipientType } from '@vyrnnstudios/messages/enums';
+import {
+  MessageType,
+  MessagingProduct,
+  RecipientType
+} from '@vyrnnstudios/messages/enums';
 
 export class MessageBuilder {
   private readonly message: Message;

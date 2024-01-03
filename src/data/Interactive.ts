@@ -2,9 +2,9 @@ import { Header } from '@vyrnnstudios/messages/data/Header';
 import { Body } from '@vyrnnstudios/messages/data/Body';
 import { Footer } from '@vyrnnstudios/messages/data/Footer';
 
-import { HeaderBuilder } from '@vyrnnstudios/messages/build/HeaderBuilder';
-import { BodyBuilder } from '@vyrnnstudios/messages/build/BodyBuilder';
-import { FooterBuilder } from '@vyrnnstudios/messages/build/FooterBuilder';
+import { HeaderBuilder } from '@vyrnnstudios/messages/builders/HeaderBuilder';
+import { BodyBuilder } from '@vyrnnstudios/messages/builders/BodyBuilder';
+import { FooterBuilder } from '@vyrnnstudios/messages/builders/FooterBuilder';
 
 import { InteractiveType } from '@vyrnnstudios/messages/enums';
 

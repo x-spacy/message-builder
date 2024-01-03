@@ -1,4 +1,8 @@
-import { Flow, FlowParameter, FlowParameterFlowActionPayload } from '@vyrnnstudios/messages/data/Interactive';
+import {
+  Flow,
+  FlowParameter,
+  FlowParameterFlowActionPayload
+} from '@vyrnnstudios/messages/data/Interactive';
 
 export class FlowBuilder {
   private flow: Flow;

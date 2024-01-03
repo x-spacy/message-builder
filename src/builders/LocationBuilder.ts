@@ -14,7 +14,7 @@ export class LocationBuilder {
   public static builder(): LocationBuilder {
     return LocationBuilder.newBuilder();
   }
-  
+
   public append(location: Location): LocationBuilder {
     this.location = location;
     return this;

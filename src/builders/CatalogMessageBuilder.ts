@@ -47,7 +47,7 @@ export class CatalogMessageBuilder {
 }
 
 export class CatalogMessageParameterBuilder {
-  private catalogMessageParameter: CatalogMessageParameter
+  private catalogMessageParameter: CatalogMessageParameter;
 
   constructor() {
     this.catalogMessageParameter = new CatalogMessageParameter();
