@@ -1,5 +1,5 @@
-declare module '@vyrnnstudios/messages' {
-  import { Location } from '@vyrnnstudios/messages';
+declare module '@x-spacy/message-builder' {
+  import { Location } from '@x-spacy/message-builder';
 
   export class LocationBuilder {
     public static newBuilder(): LocationBuilder

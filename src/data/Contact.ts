@@ -3,7 +3,7 @@ import {
   ContactEmailType,
   ContactPhoneType,
   ContactUrlType
-} from '@vyrnnstudios/messages/enums';
+} from '@x-spacy/message-builder/enums';
 
 export class Contact {
   #addresses?: ContactAddress;

@@ -1,5 +1,5 @@
-declare module '@vyrnnstudios/messages' {
-  import { Media } from '@vyrnnstudios/messages';
+declare module '@x-spacy/message-builder' {
+  import { Media } from '@x-spacy/message-builder';
 
   export class MediaBuilder {
     public static newBuilder(): MediaBuilder

@@ -1,5 +1,5 @@
-declare module '@vyrnnstudios/messages' {
-  import { Body } from '@vyrnnstudios/messages';
+declare module '@x-spacy/message-builder' {
+  import { Body } from '@x-spacy/message-builder';
 
   export class BodyBuilder {
     public static newBuilder(): BodyBuilder

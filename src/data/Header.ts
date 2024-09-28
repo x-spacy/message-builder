@@ -1,4 +1,4 @@
-import { HeaderType } from '@vyrnnstudios/messages/enums';
+import { HeaderType } from '@x-spacy/message-builder/enums';
 
 export class Header {
   #type: HeaderType;

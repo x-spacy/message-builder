@@ -1,11 +1,11 @@
-declare module '@vyrnnstudios/messages' {
+declare module '@x-spacy/message-builder' {
   import {
     Header,
     HeaderImage,
     HeaderVideo,
     HeaderDocument,
     HeaderType
-  } from '@vyrnnstudios/messages';
+  } from '@x-spacy/message-builder';
 
   export class HeaderBuilder {
     public static newBuilder(): HeaderBuilder

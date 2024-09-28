@@ -1,5 +1,5 @@
-declare module '@vyrnnstudios/messages' {
-  import { Footer } from '@vyrnnstudios/messages';
+declare module '@x-spacy/message-builder' {
+  import { Footer } from '@x-spacy/message-builder';
 
   export class FooterBuilder {
     public static newBuilder(): FooterBuilder

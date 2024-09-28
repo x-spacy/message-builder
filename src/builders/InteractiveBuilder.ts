@@ -1,7 +1,15 @@
-import { Header } from '@vyrnnstudios/messages/data/Header';
-import { Body } from '@vyrnnstudios/messages/data/Body';
-import { Footer } from '@vyrnnstudios/messages/data/Footer';
 
+import { CatalogMessageBuilder } from '@x-spacy/message-builder/builders/CatalogMessageBuilder';
+import { FlowBuilder } from '@x-spacy/message-builder/builders/FlowBuilder';
+import { ListBuilder } from '@x-spacy/message-builder/builders/ListBuilder';
+import { ProductBuilder } from '@x-spacy/message-builder/builders/ProductBuilder';
+import { ProductListBuilder } from '@x-spacy/message-builder/builders/ProductListBuilder';
+import { ReplyButtonBuilder } from '@x-spacy/message-builder/builders/ReplyButtonBuilder';
+import { InteractiveType } from '@x-spacy/message-builder/enums';
+
+import { Body } from '@x-spacy/message-builder/data/Body';
+import { Footer } from '@x-spacy/message-builder/data/Footer';
+import { Header } from '@x-spacy/message-builder/data/Header';
 import {
   CatalogMessage,
   Flow,
@@ -10,16 +18,7 @@ import {
   Product,
   ProductList,
   ReplyButton
-} from '@vyrnnstudios/messages/data/Interactive';
-
-import { ListBuilder } from '@vyrnnstudios/messages/builders/ListBuilder';
-import { ReplyButtonBuilder } from '@vyrnnstudios/messages/builders/ReplyButtonBuilder';
-import { ProductBuilder } from '@vyrnnstudios/messages/builders/ProductBuilder';
-import { ProductListBuilder } from '@vyrnnstudios/messages/builders/ProductListBuilder';
-import { CatalogMessageBuilder } from '@vyrnnstudios/messages/builders/CatalogMessageBuilder';
-import { FlowBuilder } from '@vyrnnstudios/messages/builders/FlowBuilder';
-
-import { InteractiveType } from '@vyrnnstudios/messages/enums';
+} from '@x-spacy/message-builder/data/Interactive';
 
 export class InteractiveBuilder {
   private interactive: Interactive;

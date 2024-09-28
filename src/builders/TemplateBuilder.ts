@@ -1,13 +1,13 @@
+import { TemplateComponentParameterType, TemplateIndex } from '@x-spacy/message-builder/enums';
+
+import { Currency } from '@x-spacy/message-builder/data/Currency';
+import { DateTime } from '@x-spacy/message-builder/data/DateTime';
+import { Media } from '@x-spacy/message-builder/data/Media';
 import {
   Template,
   TemplateComponent,
   TemplateComponentParameter
-} from '@vyrnnstudios/messages/data/Template';
-import { Currency } from '@vyrnnstudios/messages/data/Currency';
-import { DateTime } from '@vyrnnstudios/messages/data/DateTime';
-import { Media } from '@vyrnnstudios/messages/data/Media';
-
-import { TemplateComponentParameterType, TemplateIndex } from '@vyrnnstudios/messages/enums';
+} from '@x-spacy/message-builder/data/Template';
 
 export class TemplateBuilder {
   private template: Template;

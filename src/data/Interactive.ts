@@ -1,12 +1,12 @@
-import { Header } from '@vyrnnstudios/messages/data/Header';
-import { Body } from '@vyrnnstudios/messages/data/Body';
-import { Footer } from '@vyrnnstudios/messages/data/Footer';
 
-import { HeaderBuilder } from '@vyrnnstudios/messages/builders/HeaderBuilder';
-import { BodyBuilder } from '@vyrnnstudios/messages/builders/BodyBuilder';
-import { FooterBuilder } from '@vyrnnstudios/messages/builders/FooterBuilder';
+import { BodyBuilder } from '@x-spacy/message-builder/builders/BodyBuilder';
+import { FooterBuilder } from '@x-spacy/message-builder/builders/FooterBuilder';
+import { HeaderBuilder } from '@x-spacy/message-builder/builders/HeaderBuilder';
+import { InteractiveType } from '@x-spacy/message-builder/enums';
 
-import { InteractiveType } from '@vyrnnstudios/messages/enums';
+import { Body } from '@x-spacy/message-builder/data/Body';
+import { Footer } from '@x-spacy/message-builder/data/Footer';
+import { Header } from '@x-spacy/message-builder/data/Header';
 
 export class Interactive {
   #type: InteractiveType;

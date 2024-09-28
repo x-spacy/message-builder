@@ -1,4 +1,4 @@
-import { Footer } from '@vyrnnstudios/messages/data/Footer';
+import { Footer } from '@x-spacy/message-builder/data/Footer';
 
 export class FooterBuilder {
   private footer: Footer;

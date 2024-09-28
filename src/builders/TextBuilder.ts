@@ -1,4 +1,4 @@
-import { Text } from '@vyrnnstudios/messages/data/Text';
+import { Text } from '@x-spacy/message-builder/data/Text';
 
 export class TextBuilder {
   private text: Text;

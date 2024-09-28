@@ -1,4 +1,4 @@
-import { Context } from '@vyrnnstudios/messages/data/Context';
+import { Context } from '@x-spacy/message-builder/data/Context';
 
 export class ContextBuilder {
   private context: Context;

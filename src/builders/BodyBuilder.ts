@@ -1,4 +1,4 @@
-import { Body } from '@vyrnnstudios/messages/data/Body';
+import { Body } from '@x-spacy/message-builder/data/Body';
 
 export class BodyBuilder {
   private body: Body;

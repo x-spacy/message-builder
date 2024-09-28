@@ -1,4 +1,4 @@
-declare module '@vyrnnstudios/messages' {
+declare module '@x-spacy/message-builder' {
   import {
     MessageType,
     RecipientType,
@@ -16,7 +16,7 @@ declare module '@vyrnnstudios/messages' {
     HeaderBuilder,
     BodyBuilder,
     FooterBuilder
-  } from '@vyrnnstudios/messages';
+  } from '@x-spacy/message-builder';
 
   export class Message {
     public set to(to: string)

@@ -1,4 +1,4 @@
-import { Product } from '@vyrnnstudios/messages/data/Interactive';
+import { Product } from '@x-spacy/message-builder/data/Interactive';
 
 export class ProductBuilder {
   private product: Product;

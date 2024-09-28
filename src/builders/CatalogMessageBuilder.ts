@@ -1,4 +1,4 @@
-import { CatalogMessage, CatalogMessageParameter } from '@vyrnnstudios/messages/data/Interactive';
+import { CatalogMessage, CatalogMessageParameter } from '@x-spacy/message-builder/data/Interactive';
 
 export class CatalogMessageBuilder {
   private catalogMessage: CatalogMessage;

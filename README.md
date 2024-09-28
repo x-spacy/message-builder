@@ -7,13 +7,13 @@ A fully typed message builder created using TypeScript. A better way to creating
 ## Installation
 
 ```bash
-npm install @vyrnnstudios/messages
+npm install @x-spacy/message-builder
 ```
 
 ## Usage
 
 ```typescript
-import { MessageBuilder, MessageType } from '@vyrnnstudios/messages';
+import { MessageBuilder, MessageType } from '@x-spacy/message-builder';
 
 const message = MessageBuilder.newBuilder()
   .to('000000000000')
@@ -26,4 +26,4 @@ const message = MessageBuilder.newBuilder()
 
 ## License
 
-Vyrnn Studios is [MIT Licensed](LICENSE).
+X-Spacy LTDA is [MIT Licensed](LICENSE).

@@ -1,4 +1,11 @@
 import {
+  ContactAddressType,
+  ContactEmailType,
+  ContactPhoneType,
+  ContactUrlType
+} from '@x-spacy/message-builder/enums';
+
+import {
   Contact,
   ContactAddress,
   ContactEmail,
@@ -6,14 +13,7 @@ import {
   ContactOrg,
   ContactPhone,
   ContactUrl
-} from '@vyrnnstudios/messages/data/Contact';
-
-import {
-  ContactAddressType,
-  ContactEmailType,
-  ContactPhoneType,
-  ContactUrlType
-} from '@vyrnnstudios/messages/enums';
+} from '@x-spacy/message-builder/data/Contact';
 
 export class ContactBuilder {
   private contact: Contact;

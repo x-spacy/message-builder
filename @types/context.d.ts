@@ -1,5 +1,5 @@
-declare module '@vyrnnstudios/messages' {
-  import { Context } from '@vyrnnstudios/messages';
+declare module '@x-spacy/message-builder' {
+  import { Context } from '@x-spacy/message-builder';
 
   export class ContextBuilder {
     public static newBuilder(): ContextBuilder

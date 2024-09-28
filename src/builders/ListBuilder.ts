@@ -2,7 +2,7 @@ import {
   List,
   ListSection,
   ListSectionRow
-} from '@vyrnnstudios/messages/data/Interactive';
+} from '@x-spacy/message-builder/data/Interactive';
 
 export class ListBuilder {
   private list: List;

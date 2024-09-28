@@ -1,5 +1,7 @@
-#!/bin/bash node
+#!/bin/node
 
-rm -rf dist
-tsc --build
-tsconfig-replace-paths --src src --out dist --project tsconfig.json > /dev/null
+# clean dist folder
+rm -rf dist > /dev/null
+
+# transpile source
+babel src -d dist --extensions .ts

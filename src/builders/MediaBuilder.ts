@@ -1,4 +1,4 @@
-import { Media } from '@vyrnnstudios/messages/data/Media';
+import { Media } from '@x-spacy/message-builder/data/Media';
 
 export class MediaBuilder {
   private media: Media;

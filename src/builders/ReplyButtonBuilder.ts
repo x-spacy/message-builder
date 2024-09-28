@@ -2,7 +2,7 @@ import {
   ReplyButton,
   ReplyButtonRow,
   ReplyButtonRowReply
-} from '@vyrnnstudios/messages/data/Interactive';
+} from '@x-spacy/message-builder/data/Interactive';
 
 export class ReplyButtonBuilder {
   private replyButton: ReplyButton;

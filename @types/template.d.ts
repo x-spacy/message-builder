@@ -1,4 +1,4 @@
-declare module '@vyrnnstudios/messages' {
+declare module '@x-spacy/message-builder' {
   import {
     Template,
     TemplateComponent,
@@ -8,7 +8,7 @@ declare module '@vyrnnstudios/messages' {
     Media,
     TemplateComponentParameterType,
     TemplateIndex
-  } from '@vyrnnstudios/messages';
+  } from '@x-spacy/message-builder';
 
   export class TemplateBuilder {
     public static newBuilder(): TemplateBuilder

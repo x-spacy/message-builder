@@ -1,4 +1,4 @@
-import { CalendarType, DayOfWeek } from '@vyrnnstudios/messages/enums';
+import { CalendarType, DayOfWeek } from '@x-spacy/message-builder/enums';
 
 export class DateTime {
   #component?: DateTimeComponent;

@@ -1,7 +1,7 @@
-import { Exception } from '@somosprte/exceptions';
+import { Exception } from '@x-spacy/exceptions';
 
 export class InvalidMessageType extends Exception {
   constructor() {
-    super('InvalidMessageType', 400);
+    super(400, 'InvalidMessageType');
   }
 }

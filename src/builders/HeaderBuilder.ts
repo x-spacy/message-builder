@@ -1,12 +1,12 @@
+import { HeaderType } from '@x-spacy/message-builder/enums';
+
 import {
   Header,
   HeaderDocument,
   HeaderImage,
   HeaderProvider,
   HeaderVideo
-} from '@vyrnnstudios/messages/data/Header';
-
-import { HeaderType } from '@vyrnnstudios/messages/enums';
+} from '@x-spacy/message-builder/data/Header';
 
 export class HeaderBuilder {
   private header: Header;

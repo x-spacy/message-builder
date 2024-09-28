@@ -1,4 +1,4 @@
-declare module '@vyrnnstudios/messages' {
+declare module '@x-spacy/message-builder' {
   export class TextBuilder {
     public static newBuilder(): TextBuilder
 

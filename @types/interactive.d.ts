@@ -1,4 +1,4 @@
-declare module '@vyrnnstudios/messages' {
+declare module '@x-spacy/message-builder' {
   import {
     Interactive,
     Header,
@@ -23,7 +23,7 @@ declare module '@vyrnnstudios/messages' {
     BodyBuilder,
     FooterBuilder,
     InteractiveType
-  } from '@vyrnnstudios/messages';
+  } from '@x-spacy/message-builder';
 
   export class InteractiveBuilder {
     public static newBuilder(): InteractiveBuilder

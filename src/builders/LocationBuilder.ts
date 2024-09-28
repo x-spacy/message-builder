@@ -1,4 +1,4 @@
-import { Location } from '@vyrnnstudios/messages/data/Location';
+import { Location } from '@x-spacy/message-builder/data/Location';
 
 export class LocationBuilder {
   private location: Location;

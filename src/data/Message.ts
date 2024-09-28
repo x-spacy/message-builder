@@ -1,20 +1,18 @@
-import { Contact } from '@vyrnnstudios/messages/data/Contact';
-
-import { Context } from '@vyrnnstudios/messages/data/Context';
-
-import { Text } from '@vyrnnstudios/messages/data/Text';
-import { Interactive } from '@vyrnnstudios/messages/data/Interactive';
-import { Media } from '@vyrnnstudios/messages/data/Media';
-import { Location } from '@vyrnnstudios/messages/data/Location';
-import { Template } from '@vyrnnstudios/messages/data/Template';
-
 import {
   MessageType,
   MessagingProduct,
   RecipientType
-} from '@vyrnnstudios/messages/enums';
+} from '@x-spacy/message-builder/enums';
 
-import { InvalidMessageType } from '@vyrnnstudios/messages/exceptions/InvalidMessageType';
+import { Contact } from '@x-spacy/message-builder/data/Contact';
+import { Context } from '@x-spacy/message-builder/data/Context';
+import { Interactive } from '@x-spacy/message-builder/data/Interactive';
+import { Location } from '@x-spacy/message-builder/data/Location';
+import { Media } from '@x-spacy/message-builder/data/Media';
+import { Template } from '@x-spacy/message-builder/data/Template';
+import { Text } from '@x-spacy/message-builder/data/Text';
+
+import { InvalidMessageType } from '@x-spacy/message-builder/exceptions/InvalidMessageType';
 
 export class Message {
   #to: string;

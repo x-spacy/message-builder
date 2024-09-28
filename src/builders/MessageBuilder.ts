@@ -1,26 +1,25 @@
-import { Message } from '@vyrnnstudios/messages/data/Message';
 
-import { Text } from '@vyrnnstudios/messages/data/Text';
-import { Interactive } from '@vyrnnstudios/messages/data/Interactive';
-import { Media } from '@vyrnnstudios/messages/data/Media';
-import { Location } from '@vyrnnstudios/messages/data/Location';
-import { Template } from '@vyrnnstudios/messages/data/Template';
-import { Contact } from '@vyrnnstudios/messages/data/Contact';
-import { Context } from '@vyrnnstudios/messages/data/Context';
-
-import { TextBuilder } from '@vyrnnstudios/messages/builders/TextBuilder';
-import { InteractiveBuilder } from '@vyrnnstudios/messages/builders/InteractiveBuilder';
-import { MediaBuilder } from '@vyrnnstudios/messages/builders/MediaBuilder';
-import { LocationBuilder } from '@vyrnnstudios/messages/builders/LocationBuilder';
-import { TemplateBuilder } from '@vyrnnstudios/messages/builders/TemplateBuilder';
-import { ContactBuilder } from '@vyrnnstudios/messages/builders/ContactBuilder';
-import { ContextBuilder } from '@vyrnnstudios/messages/builders/ContextBuilder';
-
+import { ContactBuilder } from '@x-spacy/message-builder/builders/ContactBuilder';
+import { ContextBuilder } from '@x-spacy/message-builder/builders/ContextBuilder';
+import { InteractiveBuilder } from '@x-spacy/message-builder/builders/InteractiveBuilder';
+import { LocationBuilder } from '@x-spacy/message-builder/builders/LocationBuilder';
+import { MediaBuilder } from '@x-spacy/message-builder/builders/MediaBuilder';
+import { TemplateBuilder } from '@x-spacy/message-builder/builders/TemplateBuilder';
+import { TextBuilder } from '@x-spacy/message-builder/builders/TextBuilder';
 import {
   MessageType,
   MessagingProduct,
   RecipientType
-} from '@vyrnnstudios/messages/enums';
+} from '@x-spacy/message-builder/enums';
+
+import { Contact } from '@x-spacy/message-builder/data/Contact';
+import { Context } from '@x-spacy/message-builder/data/Context';
+import { Interactive } from '@x-spacy/message-builder/data/Interactive';
+import { Location } from '@x-spacy/message-builder/data/Location';
+import { Media } from '@x-spacy/message-builder/data/Media';
+import { Message } from '@x-spacy/message-builder/data/Message';
+import { Template } from '@x-spacy/message-builder/data/Template';
+import { Text } from '@x-spacy/message-builder/data/Text';
 
 export class MessageBuilder {
   private readonly message: Message;

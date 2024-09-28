@@ -2,7 +2,7 @@ import {
   ProductList,
   ProductListSection,
   ProductListSectionProductItem
-} from '@vyrnnstudios/messages/data/Interactive';
+} from '@x-spacy/message-builder/data/Interactive';
 
 export class ProductListBuilder {
   private productList: ProductList;

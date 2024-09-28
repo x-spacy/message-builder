@@ -2,7 +2,7 @@ import {
   Flow,
   FlowParameter,
   FlowParameterFlowActionPayload
-} from '@vyrnnstudios/messages/data/Interactive';
+} from '@x-spacy/message-builder/data/Interactive';
 
 export class FlowBuilder {
   private flow: Flow;
